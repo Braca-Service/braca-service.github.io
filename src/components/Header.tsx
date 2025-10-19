@@ -17,15 +17,15 @@ const Header = () => {
           
           <nav className="flex flex-wrap gap-3 sm:gap-4 text-sm">
             <a 
-              href="tel:+41000000000" 
+              href="tel:+41764018842" 
               className="flex items-center gap-2 text-foreground hover:text-primary transition-colors group"
             >
               <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
-              <span className="hidden sm:inline">+41 00 000 00 00</span>
+              <span className="hidden sm:inline">+41 76 401 88 42</span>
             </a>
             <div className="flex items-center gap-2 text-muted-foreground">
               <MapPin className="w-4 h-4" />
-              <span className="hidden sm:inline">Zürich</span>
+              <span className="hidden sm:inline">Luzern</span>
             </div>
           </nav>
         </div>

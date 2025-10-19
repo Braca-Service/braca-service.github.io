@@ -3,8 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const OpeningHours = () => {
   const hours = [
-    { day: "Montag - Freitag", time: "08:00 - 18:00" },
-    { day: "Samstag", time: "09:00 - 16:00" },
+    { day: "Montag", time: "13:30 - 18:30" },
+    { day: "Dienstag - Freitag", time: "08:00 - 12:00, 13:30 - 18:30" },
+    { day: "Samstag", time: "08:00 - 14:00" },
     { day: "Sonntag", time: "Geschlossen" }
   ];
 
@@ -46,8 +47,8 @@ const OpeningHours = () => {
                   <div>
                     <p className="font-medium text-foreground text-sm sm:text-base mb-1">Adresse</p>
                     <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                      Musterstrasse 123<br />
-                      8000 Zürich<br />
+                      Luzernerstrasse 117<br />
+                      6014 Luzern<br />
                       Schweiz
                     </p>
                   </div>
@@ -58,10 +59,10 @@ const OpeningHours = () => {
                   <div>
                     <p className="font-medium text-foreground text-sm sm:text-base mb-1">Telefon</p>
                     <a 
-                      href="tel:+41000000000" 
+                      href="tel:+41764018842" 
                       className="text-primary hover:text-primary-light transition-colors font-medium text-sm sm:text-base"
                     >
-                      +41 00 000 00 00
+                      +41 76 401 88 42
                     </a>
                   </div>
                 </div>
@@ -71,10 +72,10 @@ const OpeningHours = () => {
                   <div>
                     <p className="font-medium text-foreground text-sm sm:text-base mb-1">E-Mail</p>
                     <a 
-                      href="mailto:info@braca-service.ch" 
+                      href="mailto:bracaservice@sunrise.ch" 
                       className="text-primary hover:text-primary-light transition-colors font-medium text-sm sm:text-base break-all"
                     >
-                      info@braca-service.ch
+                      bracaservice@sunrise.ch
                     </a>
                   </div>
                 </div>

@@ -13,95 +13,95 @@ const services = [
   {
     icon: <Scissors className="w-7 h-7 sm:w-8 sm:h-8" />,
     title: "Schuhreparaturen",
-    description: "Professionelle Reparaturen für alle Schuhtypen",
+    description: "Ihre Lieblingsschuhe verdienen eine zweite Chance",
     items: [
-      "Absatz ersetzen",
-      "Sohle ersetzen",
-      "Kleine Orthopädie",
-      "Schuhe weiten, längen",
-      "Wanderschuh besohlen"
+      "Absatz professionell ersetzen",
+      "Neue Sohlen für längere Haltbarkeit",
+      "Orthopädische Anpassungen",
+      "Schuhe weiten oder verlängern",
+      "Wanderschuhe fachgerecht besohlen"
     ]
   },
   {
     icon: <Key className="w-7 h-7 sm:w-8 sm:h-8" />,
     title: "Schlüsselservice",
-    description: "Kompetenter Service für alle Schlüsselarten",
+    description: "Schnell, zuverlässig und präzise - Ihr Schlüssel zum Erfolg",
     items: [
-      "Autoschlüssel mit Wegfahrsperre",
-      "Zylinderschlüssel",
-      "Briefkastenschlüssel",
-      "Velo / Motorradschlüssel",
-      "Gussschlüssel"
+      "Autoschlüssel mit Wegfahrsperre kopieren",
+      "Zylinderschlüssel nach Code",
+      "Briefkastenschlüssel anfertigen",
+      "Velo- & Motorradschlüssel",
+      "Gussschlüssel nach Vorlage"
     ],
     featured: true
   },
   {
     icon: <Pen className="w-7 h-7 sm:w-8 sm:h-8" />,
     title: "Gravuren",
-    description: "Präzise Gravuren für verschiedene Anwendungen",
+    description: "Personalisierung mit Präzision und Liebe zum Detail",
     items: [
-      "Briefkastenschilder",
-      "Sonnerieschilder",
-      "Türklingelschilder",
-      "Namensschilder",
-      "Hundemarken"
+      "Elegante Briefkastenschilder",
+      "Hochwertige Klingelschilder",
+      "Türschilder nach Wunsch",
+      "Individuelle Namensschilder",
+      "Personalisierte Hundemarken"
     ]
   },
   {
     icon: <Stamp className="w-7 h-7 sm:w-8 sm:h-8" />,
     title: "Stempel",
-    description: "Individuelle Stempel nach Ihren Wünschen",
+    description: "Ihr individueller Stempel - professionell und nachhaltig",
     items: [
-      "Automatikstempel",
-      "11 verschiedene Grössen",
-      "4 verschiedene Farben",
-      "Freie Gestaltung",
-      "Alle Stempel nachfüllbar"
+      "Praktische Automatikstempel",
+      "11 verschiedene Grössen verfügbar",
+      "4 Farben zur Auswahl",
+      "Komplett nach Ihren Wünschen gestaltet",
+      "100% nachfüllbar und umweltfreundlich"
     ]
   },
   {
     icon: <Settings className="w-7 h-7 sm:w-8 sm:h-8" />,
     title: "Schleifarbeiten",
-    description: "Professionelles Schärfen und Schleifen",
+    description: "Messerscharf in kürzester Zeit - Qualität, die schneidet",
     items: [
-      "Fleisch - Küchenmesser",
-      "Garten - Heckenschere",
-      "Rasenmähermesser",
-      "Schere",
-      "Axt"
+      "Küchenmesser rasiermesserscharf",
+      "Heckenscheren für perfekte Schnitte",
+      "Rasenmähermesser schleifen",
+      "Scheren aller Art",
+      "Äxte professionell geschärft"
     ]
   },
   {
     icon: <Edit3 className="w-7 h-7 sm:w-8 sm:h-8" />,
     title: "Näharbeiten",
-    description: "Fachgerechte Änderungen und Reparaturen",
+    description: "Perfekte Passform für Ihre Lieblingsstücke",
     items: [
-      "Jeanshose kürzen",
-      "Stoffhose kürzen",
-      "Reissverschluss ersetzen",
-      "Flickarbeiten",
-      "Diverse Änderungen"
+      "Jeans auf die richtige Länge kürzen",
+      "Stoffhosen präzise anpassen",
+      "Reissverschlüsse fachgerecht ersetzen",
+      "Sorgfältige Flickarbeiten",
+      "Massgeschneiderte Änderungen"
     ]
   },
   {
     icon: <Tag className="w-7 h-7 sm:w-8 sm:h-8" />,
     title: "Beschriftungen",
-    description: "Professionelle Schilder und Beschriftungen",
+    description: "Professionelle Beschilderung für jeden Bedarf",
     items: [
-      "Parkplatzschilder",
-      "Firmenschilder",
-      "Magnetschilder"
+      "Wetterfeste Parkplatzschilder",
+      "Repräsentative Firmenschilder",
+      "Flexible Magnetschilder"
     ]
   },
   {
     icon: <Settings className="w-7 h-7 sm:w-8 sm:h-8" />,
-    title: "Diverse Services",
-    description: "Weitere praktische Dienstleistungen",
+    title: "Weitere Services",
+    description: "Kleine Reparaturen mit grosser Wirkung",
     items: [
-      "Fernbedienung reparieren",
-      "Schlüsselgehäuse wechseln",
-      "Batterie wechseln (Uhren und Autoschlüssel)",
-      "Uhrband kürzen"
+      "Fernbedienungen wieder funktionsfähig machen",
+      "Schlüsselgehäuse austauschen",
+      "Batterien wechseln (Uhren & Autoschlüssel)",
+      "Uhrbänder professionell kürzen"
     ]
   }
 ];

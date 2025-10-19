@@ -9,42 +9,59 @@ const SEOHead = () => {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Braca Service",
-      "description": "Professioneller Schlüssel-, Schuh- und Gravurservice in Zürich. Verifizierter KABA-Partner mit kostenlosem Autoschlüsseltest.",
+      "description": "Professioneller Schlüssel-, Schuh- und Gravurservice in Luzern. Verifizierter KABA-Partner mit kostenlosem Autoschlüsseltest.",
       "image": "https://cc1cf88a-661a-4d61-bb8b-9905aad51649.lovableproject.com/og-image.jpg",
       "@id": "https://braca-service.ch",
       "url": "https://braca-service.ch",
-      "telephone": "+41000000000",
+      "telephone": "+41764018842",
+      "email": "bracaservice@sunrise.ch",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Musterstrasse 123",
-        "addressLocality": "Zürich",
-        "postalCode": "8000",
+        "streetAddress": "Luzernerstrasse 117",
+        "addressLocality": "Luzern",
+        "postalCode": "6014",
         "addressCountry": "CH"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 47.3769,
-        "longitude": 8.5417
+        "latitude": 47.0502,
+        "longitude": 8.3093
       },
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "13:30",
+          "closes": "18:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
           "dayOfWeek": [
-            "Monday",
             "Tuesday",
             "Wednesday",
             "Thursday",
             "Friday"
           ],
           "opens": "08:00",
-          "closes": "18:00"
+          "closes": "12:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "13:30",
+          "closes": "18:30"
         },
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": "Saturday",
-          "opens": "09:00",
-          "closes": "16:00"
+          "opens": "08:00",
+          "closes": "14:00"
         }
       ],
       "sameAs": [],
