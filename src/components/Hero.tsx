@@ -1,57 +1,62 @@
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Award } from "lucide-react";
+import { CheckCircle, Award, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-workshop.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[600px] flex items-center">
+    <section className="relative min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary-light/80"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl text-primary-foreground">
-          <div className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-4 py-2 rounded-full mb-6 font-semibold">
-            <Award className="w-5 h-5" />
-            <span>Verifizierter KABA-Partner</span>
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 py-12 sm:py-16 lg:py-20">
+        <div className="max-w-3xl animate-slide-up">
+          <div className="inline-flex items-center gap-2 glass-effect border border-primary-foreground/20 text-primary-foreground px-4 py-2.5 rounded-full mb-6 sm:mb-8 font-semibold shadow-brand-lg">
+            <Award className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="text-sm sm:text-base">Verifizierter KABA-Partner</span>
           </div>
           
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Kostenloser Autoschlüsseltest
-          </h2>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-primary-foreground">
+            Kostenloser<br />Autoschlüsseltest
+          </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 leading-relaxed">
+          <p className="text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 text-primary-foreground/95 leading-relaxed max-w-2xl">
             Professioneller Service für Schlüssel, Schuhreparaturen und Gravuren. 
             Mit Ihnen zusammen finden wir immer eine Lösung.
           </p>
           
-          <div className="flex flex-wrap gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
             <Button 
               size="lg" 
-              className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-xl text-lg px-8 py-6"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-brand-xl hover:shadow-brand-2xl transition-all duration-300 hover:scale-105 text-base sm:text-lg px-6 sm:px-8 h-12 sm:h-14 rounded-xl font-semibold"
+              asChild
             >
-              Jetzt Termin vereinbaren
+              <a href="tel:+41000000000" className="flex items-center gap-2">
+                <Phone className="w-5 h-5" />
+                <span>Jetzt anrufen</span>
+              </a>
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="bg-primary-foreground/10 text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/20 backdrop-blur-sm text-lg px-8 py-6"
+              className="glass-effect text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/20 text-base sm:text-lg px-6 sm:px-8 h-12 sm:h-14 rounded-xl font-semibold"
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Unsere Services
             </Button>
           </div>
           
-          <div className="flex flex-wrap gap-6 text-primary-foreground/90">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-6 text-primary-foreground/95">
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-accent" />
-              <span className="font-medium">Tausende zufriedene Kunden</span>
+              <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+              <span className="font-medium text-sm sm:text-base">Tausende zufriedene Kunden</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-accent" />
-              <span className="font-medium">Keine leeren Versprechen</span>
+              <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+              <span className="font-medium text-sm sm:text-base">Keine leeren Versprechen</span>
             </div>
           </div>
         </div>

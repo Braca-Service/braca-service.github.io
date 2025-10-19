@@ -4,19 +4,23 @@ import TrustSection from "@/components/TrustSection";
 import ServicesGrid from "@/components/ServicesGrid";
 import OpeningHours from "@/components/OpeningHours";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <TrustSection />
-        <ServicesGrid />
-        <OpeningHours />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <SEOHead />
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1">
+          <Hero />
+          <TrustSection />
+          <ServicesGrid />
+          <OpeningHours />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

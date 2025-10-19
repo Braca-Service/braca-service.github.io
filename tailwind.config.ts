@@ -52,11 +52,16 @@ export default {
       },
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
+        'gradient-hero': 'var(--gradient-hero)',
         'gradient-accent': 'var(--gradient-accent)',
+        'gradient-glass': 'var(--gradient-glass)',
       },
       boxShadow: {
+        'brand-sm': 'var(--shadow-sm)',
+        'brand-md': 'var(--shadow-md)',
         'brand-lg': 'var(--shadow-lg)',
         'brand-xl': 'var(--shadow-xl)',
+        'brand-2xl': 'var(--shadow-2xl)',
       },
       borderRadius: {
         lg: "var(--radius)",
