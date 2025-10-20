@@ -16,7 +16,7 @@ const Hero = () => {
         <div className="max-w-3xl animate-slide-up">
           <div className="inline-flex items-center gap-2 glass-effect border border-primary-foreground/20 text-primary-foreground px-4 py-2.5 rounded-full mb-6 sm:mb-8 font-semibold shadow-brand-lg">
             <Award className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="text-sm sm:text-base">Verifizierte Partner: Dorma Kaba, Sea, EVVA, Abus, VOX</span>
+            <span className="text-sm sm:text-base">Verifizierte Partner: dormakaba, Sea, EVVA, Abus, VOX</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-primary-foreground">

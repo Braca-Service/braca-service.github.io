@@ -4,7 +4,7 @@ const trustFeatures = [
   {
     icon: <Award className="w-10 h-10 sm:w-12 sm:h-12" />,
     title: "Premium Partner",
-    description: "Dorma Kaba, Sea, EVVA, Abus, VOX"
+    description: "dormakaba, Sea, EVVA, Abus, VOX"
   },
   {
     icon: <Users className="w-10 h-10 sm:w-12 sm:h-12" />,
@@ -73,7 +73,7 @@ const TrustSection = () => {
               </div>
             </div>
             <p className="text-sm text-primary-foreground/70 mt-3">
-              Kartenzahlung leider nicht möglich
+              Kartenzahlungen sind derzeit nicht möglich
             </p>
           </div>
         </div>

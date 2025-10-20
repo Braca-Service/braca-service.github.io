@@ -27,7 +27,17 @@ const OpeningHours = () => {
                   className="flex justify-between items-center py-3 border-b border-border/50 last:border-b-0"
                 >
                   <span className="font-medium text-foreground text-sm sm:text-base">{schedule.day}</span>
-                  <span className="text-primary font-semibold text-sm sm:text-base">{schedule.time}</span>
+
+                  {/* 
+                    Use non-breaking spaces around the dash so the dash won't be orphaned
+                    at the end of a line on iOS Safari. Also allow the time span to shrink
+                    and wrap and align wrapped lines to the right.
+                  */}
+                  <span 
+                    className="text-primary font-semibold text-sm sm:text-base text-right min-w-0 break-words"
+                  >
+                    {schedule.time.replace(/ - /g, "\u00A0-\u00A0")}
+                  </span>
                 </div>
               ))}
             </CardContent>

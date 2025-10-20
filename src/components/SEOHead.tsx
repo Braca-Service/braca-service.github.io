@@ -10,7 +10,7 @@ const SEOHead = () => {
       "@type": "LocalBusiness",
       "name": "Braca Multi Service",
       "alternateName": "Braca Service",
-      "description": "Professioneller Schlüssel-, Schuh- und Gravurservice in Luzern. Verifizierter Partner von Dorma Kaba, Sea, EVVA, Abus und VOX. Kostenloser Autoschlüsseltest.",
+      "description": "Professioneller Schlüssel-, Schuh- und Gravurservice in Luzern. Verifizierter Partner von dormakaba, Sea, EVVA, Abus und VOX. Kostenloser Autoschlüsseltest.",
       "image": "https://cc1cf88a-661a-4d61-bb8b-9905aad51649.lovableproject.com/og-image.jpg",
       "@id": "https://braca-service.ch",
       "url": "https://braca-service.ch",
