@@ -20,12 +20,12 @@ const Hero = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-primary-foreground">
-            Kostenloser<br />Autoschlüsseltest
+            Ausgesperrt?<br />Wir helfen sofort!
           </h1>
           
           <p className="text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 text-primary-foreground/95 leading-relaxed max-w-2xl">
-            Professioneller Service für Schlüssel, Schuhreparaturen und Gravuren. 
-            Mit Ihnen zusammen finden wir immer eine Lösung.
+            <strong>Kostenloser Autoschlüsseltest</strong> • Express-Schlüsseldienst • Schuhreparaturen • Gravuren & mehr<br />
+            <span className="text-accent font-bold">Meist sofort fertig - während Sie warten!</span>
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
@@ -45,18 +45,22 @@ const Hero = () => {
               className="glass-effect text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/20 text-base sm:text-lg px-6 sm:px-8 h-12 sm:h-14 rounded-xl font-semibold"
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Unsere Services
+              Alle Leistungen ansehen
             </Button>
           </div>
           
           <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-6 text-primary-foreground/95">
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-              <span className="font-medium text-sm sm:text-base">Tausende zufriedene Kunden</span>
+              <span className="font-medium text-sm sm:text-base">Express-Service verfügbar</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-              <span className="font-medium text-sm sm:text-base">Keine leeren Versprechen</span>
+              <span className="font-medium text-sm sm:text-base">Faire Preise - keine versteckten Kosten</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+              <span className="font-medium text-sm sm:text-base">Tausende zufriedene Kunden</span>
             </div>
           </div>
         </div>

@@ -8,18 +8,18 @@ const trustFeatures = [
   },
   {
     icon: <Users className="w-10 h-10 sm:w-12 sm:h-12" />,
-    title: "Tausende Kunden",
-    description: "Vertrauen uns seit Jahren"
+    title: "Express-Service",
+    description: "Meist sofort fertig - kein langes Warten"
   },
   {
     icon: <CheckCircle className="w-10 h-10 sm:w-12 sm:h-12" />,
-    title: "Garantie",
-    description: "Keine leeren Versprechen"
+    title: "Faire Preise",
+    description: "Transparent kalkuliert - keine Überraschungen"
   },
   {
     icon: <Shield className="w-10 h-10 sm:w-12 sm:h-12" />,
-    title: "Lösungsorientiert",
-    description: "Gemeinsam finden wir eine Lösung"
+    title: "Qualitätsgarantie",
+    description: "Wir stehen für unsere Arbeit ein - 100%"
   }
 ];
 
@@ -29,10 +29,10 @@ const TrustSection = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-10 sm:mb-12 lg:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
-            Vertrauen und Qualität
+            Warum zu Braca Service kommen?
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-primary-foreground/90 max-w-2xl mx-auto">
-            Professioneller Service auf höchstem Niveau
+            Schnell, günstig und zuverlässig - Ihre Vorteile auf einen Blick
           </p>
         </div>
         
