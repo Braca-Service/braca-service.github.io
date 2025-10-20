@@ -1,4 +1,5 @@
 import { Phone, MapPin } from "lucide-react";
+import bracaLogo from "@/assets/braca_logo.png";
 
 const Header = () => {
   return (
@@ -6,13 +7,11 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 py-4">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl bg-gradient-primary flex items-center justify-center shadow-brand-md">
-              <span className="text-xl font-bold text-primary-foreground">BS</span>
-            </div>
-            <div>
-              <h1 className="text-xl sm:text-2xl font-bold text-foreground">Braca Service</h1>
-              <p className="text-xs sm:text-sm text-muted-foreground">Professioneller Handwerksservice</p>
-            </div>
+            <img 
+              src={bracaLogo} 
+              alt="Braca Service Logo - Schlüsselservice, Schuhreparaturen und Gravuren in Luzern" 
+              className="h-12 sm:h-14 w-auto object-contain"
+            />
           </div>
           
           <nav className="flex flex-wrap gap-3 sm:gap-4 text-sm">
