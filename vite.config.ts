@@ -15,4 +15,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+ base: '/braca-service/' // Replace with your GitHub repo name
 }));
