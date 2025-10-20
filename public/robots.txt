@@ -47,7 +47,7 @@ User-agent: WhatsApp
 Allow: /
 
 # Sitemap
-Sitemap: https://braca-service.ch/sitemap.xml
+Sitemap: https://bracaservice.ch/sitemap.xml
 
 # Host
-Host: https://braca-service.ch
+Host: https://bracaservice.ch

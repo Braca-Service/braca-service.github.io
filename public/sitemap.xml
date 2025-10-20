@@ -3,12 +3,12 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://braca-service.ch/</loc>
+    <loc>https://bracaservice.ch/</loc>
     <lastmod>2025-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://braca-service.ch/favicon.png</image:loc>
+      <image:loc>https://bracaservice.ch/favicon.png</image:loc>
       <image:title>Braca Multi Service Logo</image:title>
       <image:caption>Professioneller Schlüssel-, Schuh- und Gravurservice in Luzern</image:caption>
     </image:image>
