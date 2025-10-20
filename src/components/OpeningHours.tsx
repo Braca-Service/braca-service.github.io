@@ -3,8 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const OpeningHours = () => {
   const hours = [
-    { day: "Montag", time: "13:30 - 18:30" },
-    { day: "Dienstag - Freitag", time: "08:00 - 12:00, 13:30 - 18:30" },
+    { day: "Montag", time: "Geschlossen" },
+    { day: "Dienstag - Freitag", time: "08:00 - 12:00, 13:00 - 17:00" },
     { day: "Samstag", time: "08:00 - 14:00" },
     { day: "Sonntag", time: "Geschlossen" }
   ];

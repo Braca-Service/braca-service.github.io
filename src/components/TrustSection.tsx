@@ -3,8 +3,8 @@ import { Award, Users, CheckCircle, Shield } from "lucide-react";
 const trustFeatures = [
   {
     icon: <Award className="w-10 h-10 sm:w-12 sm:h-12" />,
-    title: "KABA-Partner",
-    description: "Verifizierter Partner für höchste Qualität"
+    title: "Premium Partner",
+    description: "Dorma Kaba, Sea, EVVA, Abus, VOX"
   },
   {
     icon: <Users className="w-10 h-10 sm:w-12 sm:h-12" />,

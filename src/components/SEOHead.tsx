@@ -31,12 +31,6 @@ const SEOHead = () => {
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Monday",
-          "opens": "13:30",
-          "closes": "18:30"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
           "dayOfWeek": [
             "Tuesday",
             "Wednesday",
@@ -54,8 +48,8 @@ const SEOHead = () => {
             "Thursday",
             "Friday"
           ],
-          "opens": "13:30",
-          "closes": "18:30"
+          "opens": "13:00",
+          "closes": "17:00"
         },
         {
           "@type": "OpeningHoursSpecification",

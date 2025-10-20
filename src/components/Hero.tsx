@@ -16,7 +16,7 @@ const Hero = () => {
         <div className="max-w-3xl animate-slide-up">
           <div className="inline-flex items-center gap-2 glass-effect border border-primary-foreground/20 text-primary-foreground px-4 py-2.5 rounded-full mb-6 sm:mb-8 font-semibold shadow-brand-lg">
             <Award className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="text-sm sm:text-base">Verifizierter KABA-Partner</span>
+            <span className="text-sm sm:text-base">Verifizierte Partner: Dorma Kaba, Sea, EVVA, Abus, VOX</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-primary-foreground">
@@ -34,7 +34,7 @@ const Hero = () => {
               className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-brand-xl hover:shadow-brand-2xl transition-all duration-300 hover:scale-105 text-base sm:text-lg px-6 sm:px-8 h-12 sm:h-14 rounded-xl font-semibold"
               asChild
             >
-              <a href="tel:+41000000000" className="flex items-center gap-2">
+              <a href="tel:+41764018842" className="flex items-center gap-2">
                 <Phone className="w-5 h-5" />
                 <span>Jetzt anrufen</span>
               </a>
