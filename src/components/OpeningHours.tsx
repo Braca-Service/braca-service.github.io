@@ -21,25 +21,31 @@ const OpeningHours = () => {
               <CardTitle className="text-xl sm:text-2xl">Öffnungszeiten</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 sm:space-y-4">
-              {hours.map((schedule, index) => (
-                <div 
-                  key={index} 
-                  className="flex justify-between items-center py-3 border-b border-border/50 last:border-b-0"
-                >
-                  <span className="font-medium text-foreground text-sm sm:text-base">{schedule.day}</span>
+              {hours.map((schedule, index) => {
+                // split on comma and keep NBSP around dash to avoid orphaned dashes
+                const segments = schedule.time
+                  .split(',')
+                  .map(seg => seg.trim().replace(/ - /g, "\u00A0-\u00A0"));
 
-                  {/* 
-                    Use non-breaking spaces around the dash so the dash won't be orphaned
-                    at the end of a line on iOS Safari. Also allow the time span to shrink
-                    and wrap and align wrapped lines to the right.
-                  */}
-                  <span 
-                    className="text-primary font-semibold text-sm sm:text-base text-right min-w-0 break-words"
+                return (
+                  <div 
+                    key={index} 
+                    className="flex justify-between items-center py-3 border-b border-border/50 last:border-b-0"
                   >
-                    {schedule.time.replace(/ - /g, "\u00A0-\u00A0")}
-                  </span>
-                </div>
-              ))}
+                    <span className="font-medium text-foreground text-sm sm:text-base">{schedule.day}</span>
+
+                    <span className="text-primary font-semibold text-sm sm:text-base text-right min-w-0">
+                      {segments.map((seg, i) => (
+                        // render a line break between segments; last segment no trailing <br/>
+                        <span key={i}>
+                          {seg}
+                          {i < segments.length - 1 && <br />}
+                        </span>
+                      ))}
+                    </span>
+                  </div>
+                );
+              })}
             </CardContent>
           </Card>
 
