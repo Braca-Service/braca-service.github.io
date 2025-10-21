@@ -1,4 +1,4 @@
-import { Award, Users, CheckCircle, Shield, Wallet, Banknote } from "lucide-react";
+import { Award, Users, CheckCircle, Shield, Wallet, Banknote, HandCoins } from "lucide-react";
 
 const trustFeatures = [
   {
@@ -35,11 +35,11 @@ const TrustSection = () => {
             Schnell, günstig und zuverlässig - Ihre Vorteile auf einen Blick
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {trustFeatures.map((feature, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="glass-effect border border-primary-foreground/20 rounded-2xl p-6 sm:p-8 hover:bg-primary-foreground/15 transition-all duration-300 hover:scale-105 hover:shadow-brand-xl text-center animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -54,26 +54,32 @@ const TrustSection = () => {
               </p>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-8 sm:mt-12 text-center animate-fade-in">
-          <div className="glass-effect border border-primary-foreground/20 rounded-2xl p-6 inline-block">
-            <h3 className="text-lg sm:text-xl font-bold mb-4 text-primary-foreground">
+
+          <div
+            className="glass-effect border border-primary-foreground/20 rounded-2xl p-6 sm:p-8 hover:bg-primary-foreground/15 transition-all duration-300 hover:scale-105 hover:shadow-brand-xl text-center animate-slide-up"
+            style={{ animationDelay: `${4 * 0.1}s` }}
+          >
+            <div className="flex justify-center mb-4 text-accent">
+              <HandCoins className="w-10 h-10 sm:w-12 sm:h-12" />
+            </div>
+            <h3 className="text-lg sm:text-xl font-bold mb-2 text-primary-foreground">
               Zahlungsmöglichkeiten
             </h3>
-            <div className="flex items-center justify-center gap-6 sm:gap-8">
-              <div className="flex items-center gap-3">
-                <Wallet className="w-8 h-8 text-accent" />
-                <span className="text-base sm:text-lg font-semibold text-primary-foreground">TWINT</span>
+            <p className="text-sm sm:text-base text-primary-foreground/80">
+              <div className="flex items-center justify-center gap-6 sm:gap-8">
+                <div className="flex items-center gap-3">
+                  <Wallet className="w-8 h-8 text-accent" />
+                  <span className="text-base sm:text-lg font-semibold text-primary-foreground">TWINT</span>
+                </div>
+                <div className="w-px h-8 bg-primary-foreground/30"></div>
+                <div className="flex items-center gap-3">
+                  <Banknote className="w-8 h-8 text-accent" />
+                  <span className="text-base sm:text-lg font-semibold text-primary-foreground">Bargeld</span>
+                </div>
               </div>
-              <div className="w-px h-8 bg-primary-foreground/30"></div>
-              <div className="flex items-center gap-3">
-                <Banknote className="w-8 h-8 text-accent" />
-                <span className="text-base sm:text-lg font-semibold text-primary-foreground">Bargeld</span>
-              </div>
-            </div>
-            <p className="text-sm text-primary-foreground/70 mt-3">
-              Kartenzahlungen sind derzeit nicht möglich
+              <p className="text-sm text-primary-foreground/70 mt-3">
+                Kartenzahlungen sind derzeit nicht möglich
+              </p>
             </p>
           </div>
         </div>
