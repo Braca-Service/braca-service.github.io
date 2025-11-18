@@ -20,7 +20,7 @@ const Hero = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-primary-foreground">
-            Ausgesperrt?<br />Wir helfen sofort!
+            Schuhmacher in Luzern — Braca Multi Service<br />Ausgesperrt? Wir helfen sofort!
           </h1>
           
           <p className="text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 text-primary-foreground/95 leading-relaxed max-w-2xl">

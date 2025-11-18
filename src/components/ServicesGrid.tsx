@@ -13,37 +13,37 @@ const services = [
   {
     icon: <Scissors className="w-7 h-7 sm:w-8 sm:h-8" />,
     title: "Schuhreparaturen",
-    description: "Sparen Sie Hunderte! Reparieren statt neu kaufen",
+    description: "Absatz- und Sohlenreparatur in Luzern — nachhaltig & hochwertig",
     items: [
-      "Neue Absätze - wie neu für Ihre Lieblingsstücke",
-      "Besohlen - günstiger als neue Schuhe!",
-      "Orthopädische Anpassungen für perfekten Komfort",
-      "Weiten & Verlängern - perfekte Passform garantiert",
-      "Wanderschuhe retten - für Ihre nächste Tour"
+      "Absatz ersetzen - schnelle Reparatur vor Ort",
+      "Sohlen ersetzen & neu besohlen für langanhaltenden Schutz",
+      "Orthopädische Anpassungen für mehr Komfort",
+      "Weiten & Anpassungen für perfekte Passform",
+      "Wanderschuh-Service & Imprägnierung"
     ]
   },
   {
     icon: <Key className="w-7 h-7 sm:w-8 sm:h-8" />,
     title: "Schlüsselservice",
-    description: "Sofort einsatzbereit - während Sie warten!",
+    description: "Schlüssel & Autoschlüssel in Luzern - Programmierung & Duplikate",
     items: [
-      "Autoschlüssel inkl. Wegfahrsperre - sofort!",
-      "Ausgesperrt? Zylinderschlüssel nach Code",
+      "Autoschlüssel mit Wegfahrsperre - Programmierung vor Ort",
+      "Zylinderschlüssel & Ersatz nach Code",
       "Briefkasten-, Velo- & Motorradschlüssel",
       "Präzisions-Duplikate in Minuten",
-      "Auch Spezialschlüssel - wir haben die Lösung!"
+      "Spezial- & Markenschlüssel: EVVA, Abus, dormakaba"
     ]
   },
   {
     icon: <Pen className="w-7 h-7 sm:w-8 sm:h-8" />,
     title: "Gravuren",
-    description: "Einzigartig & persönlich - perfekte Geschenke!",
+    description: "Präzise Gravuren in Luzern — Namensschilder, Tür- und Briefkastenschild",
     items: [
-      "Elegante Briefkasten- & Klingelschilder",
+      "Briefkasten- & Klingelschilder in verschiedenen Materialien",
       "Wetterfeste Türschilder nach Mass",
-      "Personalisierte Namensschilder - unvergesslich!",
-      "Süsse Hundemarken mit Namen",
-      "Express-Service verfügbar - schnell wie Sie!"
+      "Personalisierte Namensschilder für privat & Business",
+      "Hundemarken und Geschenkgravuren",
+      "Express-Gravuren möglich"
     ]
   },
   {
@@ -114,10 +114,10 @@ const ServicesGrid = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-10 sm:mb-12 lg:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-foreground">
-            Sparen Sie Zeit & Geld
+            Schuhmacher in Luzern — Unsere Leistungen
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Reparieren statt wegwerfen - Schweizer Qualität zum fairen Preis. Meist sofort fertig!
+            Lokaler Schuhmacher und Reparaturservice in Luzern. Absatz- und Sohlenwechsel, Schuhpflege und Schlüsselservice — meist sofort erledigt, fachgerecht und fair bepreist.
           </p>
         </div>
         
