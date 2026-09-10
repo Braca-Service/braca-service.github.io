@@ -4,38 +4,38 @@ import heroImage from "@/assets/hero-workshop.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
-      <div 
+    <section className="relative sm:min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
+      <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary-light/80"></div>
       </div>
-      
-      <div className="container mx-auto px-4 lg:px-8 relative z-10 py-12 sm:py-16 lg:py-20">
+
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 py-6 sm:py-16 lg:py-20">
         <div className="max-w-3xl animate-slide-up">
-          <div className="inline-flex items-center gap-2 glass-effect border border-primary-foreground/20 text-primary-foreground px-4 py-2.5 rounded-full mb-6 sm:mb-8 font-semibold shadow-brand-lg">
+          <div className="inline-flex items-center gap-2 glass-effect border border-primary-foreground/20 text-primary-foreground px-3 py-2 sm:px-4 sm:py-2.5 rounded-full mb-4 sm:mb-8 font-semibold shadow-brand-lg">
             <Award className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="text-sm sm:text-base">Verifizierte Partner: dormakaba, Sea, EVVA, Abus, VOX</span>
+            <span className="text-xs sm:text-base">Verifizierte Partner: dormakaba, Sea, EVVA, Abus, VOX</span>
           </div>
-          
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-primary-foreground">
+
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-2 sm:mb-6 leading-tight text-primary-foreground">
             Schlüsseldienst & Schuhmacher in Luzern
           </h1>
 
-          <p className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-accent">
+          <p className="text-lg sm:text-2xl font-semibold mb-3 sm:mb-6 text-accent">
             Ausgesperrt? Wir helfen sofort!
           </p>
 
-          <p className="text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 text-primary-foreground/95 leading-relaxed max-w-2xl">
+          <p className="text-base sm:text-xl lg:text-2xl mb-4 sm:mb-8 text-primary-foreground/95 leading-snug sm:leading-relaxed max-w-2xl">
             <strong>Kostenloser Autoschlüsseltest</strong> • Express-Schlüsseldienst • Schuhreparaturen • Gravuren & mehr<br />
             <span className="text-accent font-bold">Meist sofort fertig - während Sie warten!</span>
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-            <Button 
-              size="lg" 
-              className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-brand-xl hover:shadow-brand-2xl transition-all duration-300 hover:scale-105 text-base sm:text-lg px-6 sm:px-8 h-12 sm:h-14 rounded-xl font-semibold"
+
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4 sm:mb-8">
+            <Button
+              size="lg"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-brand-xl hover:shadow-brand-2xl transition-all duration-300 hover:scale-105 text-base sm:text-lg px-6 sm:px-8 h-11 sm:h-14 rounded-xl font-semibold"
               asChild
             >
               <a href="tel:+41764018842" className="flex items-center gap-2">
@@ -43,17 +43,17 @@ const Hero = () => {
                 <span>Jetzt anrufen</span>
               </a>
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="glass-effect text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/20 text-base sm:text-lg px-6 sm:px-8 h-12 sm:h-14 rounded-xl font-semibold"
+            <Button
+              size="lg"
+              variant="outline"
+              className="glass-effect text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/20 text-base sm:text-lg px-6 sm:px-8 h-11 sm:h-14 rounded-xl font-semibold"
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Alle Leistungen ansehen
             </Button>
           </div>
-          
-          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-6 text-primary-foreground/95">
+
+          <div className="hidden sm:flex sm:flex-wrap gap-3 sm:gap-6 text-primary-foreground/95">
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
               <span className="font-medium text-sm sm:text-base">Express-Service verfügbar</span>

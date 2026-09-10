@@ -3,7 +3,7 @@ import bracaLogo from "@/assets/braca_logo.png";
 
 const navLinks = [
   { href: "#services", label: "Leistungen" },
-  { href: "#opening-hours", label: "Öffnungszeiten" },
+  { href: "#opening-hours", label: "Zeiten" },
   { href: "#faq", label: "Fragen" },
   { href: "#contact", label: "Kontakt" },
 ];
@@ -12,17 +12,17 @@ const Header = () => {
   return (
     <header className="bg-card/80 backdrop-blur-md border-b border-border sticky top-0 z-50 shadow-brand-sm">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 py-4">
+        <div className="flex items-center justify-between gap-3 py-2.5 sm:py-4">
           <img
             src={bracaLogo}
             alt="Braca Service Logo - Schlüsselservice, Schuhreparaturen und Gravuren in Luzern"
-            className="h-12 sm:h-14 w-auto object-contain"
+            className="h-8 sm:h-14 w-auto object-contain shrink-0"
             width={56}
             height={56}
           />
 
-          <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-            <div className="flex flex-wrap gap-x-4 gap-y-1">
+          <nav className="flex items-center gap-x-2 sm:gap-x-4 text-[11px] sm:text-sm overflow-x-auto">
+            <div className="flex items-center gap-x-2 sm:gap-x-4 whitespace-nowrap">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -33,7 +33,7 @@ const Header = () => {
                 </a>
               ))}
             </div>
-            <div className="hidden sm:flex items-center gap-2 text-muted-foreground">
+            <div className="hidden sm:flex items-center gap-2 text-muted-foreground shrink-0">
               <MapPin className="w-4 h-4" />
               <span>Luzern</span>
             </div>
