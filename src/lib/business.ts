@@ -12,8 +12,6 @@ export const business = {
   region: "LU",
   country: "Schweiz",
   mapsLink: "https://maps.app.goo.gl/9pyFFFczcqGaLPuk9",
-  mapsEmbedSrc:
-    "https://www.google.com/maps?q=Luzernerstrasse+117,+6014+Luzern&output=embed",
 };
 
 export const openingHours = [

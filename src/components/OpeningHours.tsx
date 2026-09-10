@@ -102,16 +102,6 @@ const OpeningHours = () => {
                   <span>Auf Google bewerten</span>
                 </a>
               </div>
-
-              <div className="rounded-2xl overflow-hidden border border-border/50 aspect-video">
-                <iframe
-                  title={`Karte: ${business.streetAddress}, ${business.locality}`}
-                  src={business.mapsEmbedSrc}
-                  className="w-full h-full"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
             </CardContent>
           </Card>
         </div>
