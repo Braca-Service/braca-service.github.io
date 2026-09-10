@@ -14,10 +14,10 @@ interface SEOHeadProps {
 }
 
 const SEOHead = ({
-  title = 'Schuhmacher Luzern — Braca Multi Service | Schuhreparatur & Schlüssel',
-  description = 'Schuhmacher in Luzern — Braca Multi Service: Absatz- und Sohlenreparatur, Schuhpflege und Schlüsselservice. Schnell, professionell und zuverlässig.',
+  title = 'Braca Service Luzern — Schlüsseldienst, Schuhmacher & Gravuren | dormakaba Partner',
+  description = 'Braca Service Luzern: Schlüsseldienst mit Wegfahrsperre, Schuhreparaturen, Gravuren, Stempel & mehr. Verifizierter dormakaba-Partner. Kostenloser Autoschlüsseltest, meist sofort erledigt.',
   url = 'https://bracaservice.ch/',
-  image = 'https://cc1cf88a-661a-4d61-bb8b-9905aad51649.lovableproject.com/og-image.jpg',
+  image = 'https://bracaservice.ch/favicon.png',
   faq = []
 }: SEOHeadProps) => {
   useEffect(() => {
@@ -111,7 +111,9 @@ const SEOHead = ({
           "closes": "14:00"
         }
       ],
-      "sameAs": [],
+      "sameAs": [
+        "https://maps.app.goo.gl/9pyFFFczcqGaLPuk9"
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Dienstleistungen",
