@@ -110,14 +110,14 @@ const services = [
 
 const ServicesGrid = () => {
   return (
-    <section id="services" className="py-12 sm:py-16 lg:py-24 bg-background">
+    <section id="services" className="scroll-mt-20 py-12 sm:py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-10 sm:mb-12 lg:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-foreground">
-            Schuhmacher in Luzern — Unsere Leistungen
+            Unsere Leistungen in Luzern
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Lokaler Schuhmacher und Reparaturservice in Luzern. Absatz- und Sohlenwechsel, Schuhpflege und Schlüsselservice — meist sofort erledigt, fachgerecht und fair bepreist.
+            Schlüsselservice, Schuhreparaturen, Gravuren und mehr — meist sofort erledigt, fachgerecht und fair bepreist.
           </p>
         </div>
         

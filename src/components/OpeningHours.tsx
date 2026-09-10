@@ -1,16 +1,12 @@
-import { Clock, MapPin, Phone, Mail } from "lucide-react";
+import { Clock, MapPin, Phone, Mail, Star } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { business, openingHours } from "@/lib/business";
 
 const OpeningHours = () => {
-  const hours = [
-    { day: "Montag", time: "Geschlossen" },
-    { day: "Dienstag - Freitag", time: "08:00 - 12:00, 13:00 - 17:00" },
-    { day: "Samstag", time: "08:00 - 14:00" },
-    { day: "Sonntag", time: "Geschlossen" }
-  ];
+  const hours = openingHours;
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-secondary/50">
+    <section id="opening-hours" className="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-secondary/50">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
           <Card className="shadow-brand-lg hover:shadow-brand-xl transition-all duration-300 border-border/50 animate-slide-up">
@@ -49,7 +45,7 @@ const OpeningHours = () => {
             </CardContent>
           </Card>
 
-          <Card className="shadow-brand-lg hover:shadow-brand-xl transition-all duration-300 border-border/50 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+          <Card id="contact" className="scroll-mt-20 shadow-brand-lg hover:shadow-brand-xl transition-all duration-300 border-border/50 animate-slide-up" style={{ animationDelay: '0.1s' }}>
             <CardHeader className="pb-4">
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-primary flex items-center justify-center mb-4 shadow-brand-md">
                 <MapPin className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
@@ -63,9 +59,9 @@ const OpeningHours = () => {
                   <div>
                     <p className="font-medium text-foreground text-sm sm:text-base mb-1">Adresse</p>
                     <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                      Luzernerstrasse 117<br />
-                      6014 Luzern<br />
-                      Schweiz
+                      {business.streetAddress}<br />
+                      {business.postalCode} {business.locality}<br />
+                      {business.country}
                     </p>
                   </div>
                 </div>
@@ -74,11 +70,11 @@ const OpeningHours = () => {
                   <Phone className="w-5 h-5 text-primary mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
                   <div>
                     <p className="font-medium text-foreground text-sm sm:text-base mb-1">Telefon</p>
-                    <a 
-                      href="tel:+41764018842" 
+                    <a
+                      href={`tel:${business.phoneHref}`}
                       className="text-primary hover:text-primary-light transition-colors font-medium text-sm sm:text-base"
                     >
-                      +41 76 401 88 42
+                      {business.phoneDisplay}
                     </a>
                   </div>
                 </div>
@@ -87,14 +83,34 @@ const OpeningHours = () => {
                   <Mail className="w-5 h-5 text-primary mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
                   <div>
                     <p className="font-medium text-foreground text-sm sm:text-base mb-1">E-Mail</p>
-                    <a 
-                      href="mailto:bracaservice@sunrise.ch" 
+                    <a
+                      href={`mailto:${business.email}`}
                       className="text-primary hover:text-primary-light transition-colors font-medium text-sm sm:text-base break-all"
                     >
-                      bracaservice@sunrise.ch
+                      {business.email}
                     </a>
                   </div>
                 </div>
+
+                <a
+                  href={business.mapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm sm:text-base font-semibold text-accent-foreground bg-accent/20 hover:bg-accent/30 transition-colors rounded-xl px-4 py-3 w-fit"
+                >
+                  <Star className="w-4 h-4 text-accent fill-accent" />
+                  <span>Auf Google bewerten</span>
+                </a>
+              </div>
+
+              <div className="rounded-2xl overflow-hidden border border-border/50 aspect-video">
+                <iframe
+                  title={`Karte: ${business.streetAddress}, ${business.locality}`}
+                  src={business.mapsEmbedSrc}
+                  className="w-full h-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </CardContent>
           </Card>

@@ -20,9 +20,13 @@ const Hero = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-primary-foreground">
-            Schuhmacher in Luzern — Braca Multi Service<br />Ausgesperrt? Wir helfen sofort!
+            Schlüsseldienst & Schuhmacher in Luzern
           </h1>
-          
+
+          <p className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-accent">
+            Ausgesperrt? Wir helfen sofort!
+          </p>
+
           <p className="text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 text-primary-foreground/95 leading-relaxed max-w-2xl">
             <strong>Kostenloser Autoschlüsseltest</strong> • Express-Schlüsseldienst • Schuhreparaturen • Gravuren & mehr<br />
             <span className="text-accent font-bold">Meist sofort fertig - während Sie warten!</span>
