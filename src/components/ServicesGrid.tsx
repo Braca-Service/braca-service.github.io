@@ -1,112 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Key, 
-  Scissors, 
-  Pen, 
-  Stamp, 
-  Settings, 
-  Edit3,
-  Tag
-} from "lucide-react";
-
-const services = [
-  {
-    icon: <Scissors className="w-7 h-7 sm:w-8 sm:h-8" />,
-    title: "Schuhreparaturen",
-    description: "Absatz- und Sohlenreparatur in Luzern — nachhaltig & hochwertig",
-    items: [
-      "Absatz ersetzen - schnelle Reparatur vor Ort",
-      "Sohlen ersetzen & neu besohlen für langanhaltenden Schutz",
-      "Orthopädische Anpassungen für mehr Komfort",
-      "Weiten & Anpassungen für perfekte Passform",
-      "Wanderschuh-Service & Imprägnierung"
-    ]
-  },
-  {
-    icon: <Key className="w-7 h-7 sm:w-8 sm:h-8" />,
-    title: "Schlüsselservice",
-    description: "Schlüssel & Autoschlüssel in Luzern - Programmierung & Duplikate",
-    items: [
-      "Autoschlüssel kopieren & reparieren - alle Marken, auch Keyless",
-      "Zylinderschlüssel & Ersatz nach Code",
-      "Briefkasten-, Velo- & Motorradschlüssel",
-      "Präzisions-Duplikate in Minuten",
-      "Spezial- & Markenschlüssel: EVVA, Abus, dormakaba"
-    ]
-  },
-  {
-    icon: <Pen className="w-7 h-7 sm:w-8 sm:h-8" />,
-    title: "Gravuren",
-    description: "Präzise Gravuren in Luzern — Namensschilder, Tür- und Briefkastenschild",
-    items: [
-      "Briefkasten- & Klingelschilder in verschiedenen Materialien",
-      "Wetterfeste Türschilder nach Mass",
-      "Personalisierte Namensschilder für privat & Business",
-      "Hundemarken und Geschenkgravuren",
-      "Express-Gravuren möglich"
-    ]
-  },
-  {
-    icon: <Stamp className="w-7 h-7 sm:w-8 sm:h-8" />,
-    title: "Stempel",
-    description: "In 24h bereit! Professionell & nachhaltig",
-    items: [
-      "Express: Morgen bestellt - übermorgen fertig!",
-      "11 Grössen & 4 Farben - für jeden Zweck",
-      "100% individuell nach Ihrem Design",
-      "Automatikstempel - keine Stempelkissen nötig",
-      "Nachfüllbar - spart Geld & schont die Umwelt"
-    ]
-  },
-  {
-    icon: <Settings className="w-7 h-7 sm:w-8 sm:h-8" />,
-    title: "Schleifarbeiten",
-    description: "Rasiermesserscharf - wie neu in Minuten!",
-    items: [
-      "Küchenmesser schärfer als beim Kauf!",
-      "Heckenscheren - schneiden wie Butter",
-      "Rasenmähermesser perfekt geschliffen",
-      "Scheren & Äxte - profi-scharf",
-      "Sofort-Service - meist während Sie warten"
-    ]
-  },
-  {
-    icon: <Edit3 className="w-7 h-7 sm:w-8 sm:h-8" />,
-    title: "Näharbeiten",
-    description: "Lieblingsteile retten - perfekte Passform garantiert!",
-    items: [
-      "Hosen kürzen - sitzt wie angegossen",
-      "Reissverschluss kaputt? Schnell ersetzt!",
-      "Flicken unsichtbar - sieht aus wie neu",
-      "Änderungen aller Art - massgeschneidert",
-      "Express möglich - wenn's pressiert"
-    ]
-  },
-  {
-    icon: <Tag className="w-7 h-7 sm:w-8 sm:h-8" />,
-    title: "Beschriftungen",
-    description: "Ihr Auftritt zählt - professionell beschriftet!",
-    items: [
-      "Parkplatzschilder - wetterfest & langlebig",
-      "Firmenschilder - repräsentativ & edel",
-      "Magnetschilder - flexibel einsetzbar",
-      "Individuelle Beschriftungen aller Art",
-      "Beratung inklusive - wir helfen bei der Gestaltung"
-    ]
-  },
-  {
-    icon: <Settings className="w-7 h-7 sm:w-8 sm:h-8" />,
-    title: "Weitere Services",
-    description: "Kleine Reparaturen statt teurer Neukauf!",
-    items: [
-      "Fernbedienungen reparieren - in Minuten",
-      "Schlüsselgehäuse kaputt? Sofort ersetzt!",
-      "Batteriewechsel Uhren & Autoschlüssel",
-      "Uhrbänder kürzen - perfekte Länge",
-      "Und vieles mehr - einfach fragen!"
-    ]
-  }
-];
+import { ArrowRight } from "lucide-react";
+import { services } from "@/lib/services";
 
 const ServicesGrid = () => {
   return (
@@ -130,7 +24,7 @@ const ServicesGrid = () => {
             >
               <CardHeader className="pb-4">
                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 bg-primary/10 text-primary group-hover:bg-primary/15">
-                  {service.icon}
+                  <service.icon className="w-7 h-7 sm:w-8 sm:h-8" />
                 </div>
                 <CardTitle className="text-lg sm:text-xl">{service.title}</CardTitle>
                 <CardDescription className="text-sm sm:text-base">
@@ -146,6 +40,14 @@ const ServicesGrid = () => {
                     </li>
                   ))}
                 </ul>
+                {service.href && (
+                  <a
+                    href={service.href}
+                    className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline"
+                  >
+                    Mehr zu {service.title} <ArrowRight className="w-4 h-4" />
+                  </a>
+                )}
               </CardContent>
             </Card>
           ))}

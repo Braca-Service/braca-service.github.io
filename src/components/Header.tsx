@@ -1,11 +1,12 @@
 import { MapPin } from "lucide-react";
 import bracaLogo from "@/assets/braca_logo.png";
+import { carKeyPage } from "@/lib/pages";
 
 const navLinks = [
-  { href: "#autoschluessel", label: "Autoschlüssel" },
-  { href: "#services", label: "Leistungen" },
-  { href: "#opening-hours", label: "Zeiten", desktopOnly: true },
-  { href: "#faq", label: "Fragen", desktopOnly: true },
+  { href: carKeyPage.path, label: "Autoschlüssel" },
+  { href: "/#services", label: "Leistungen" },
+  { href: "/#opening-hours", label: "Zeiten", desktopOnly: true },
+  { href: "/#faq", label: "Fragen", desktopOnly: true },
   { href: "#contact", label: "Kontakt" },
 ];
 
@@ -14,13 +15,15 @@ const Header = () => {
     <header className="bg-card/80 backdrop-blur-md border-b border-border sticky top-0 z-50 shadow-brand-sm">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between gap-3 py-2.5 sm:py-4">
-          <img
-            src={bracaLogo}
-            alt="Braca Service Logo - Schlüsselservice, Schuhreparaturen und Gravuren in Luzern"
-            className="h-8 sm:h-14 w-auto object-contain shrink-0"
-            width={56}
-            height={56}
-          />
+          <a href="/" className="shrink-0" aria-label="Braca Service – Startseite">
+            <img
+              src={bracaLogo}
+              alt="Braca Service Logo - Schlüsselservice, Schuhreparaturen und Gravuren in Luzern"
+              className="h-8 sm:h-14 w-auto object-contain"
+              width={56}
+              height={56}
+            />
+          </a>
 
           <nav className="flex items-center gap-x-2 sm:gap-x-4 text-[11px] sm:text-sm overflow-x-auto">
             <div className="flex items-center gap-x-2 sm:gap-x-4 whitespace-nowrap">

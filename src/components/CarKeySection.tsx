@@ -1,6 +1,7 @@
 import { Car, KeyRound, Wrench, ShieldCheck, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { business, carBrands, carKeyServices } from "@/lib/business";
+import { carKeyPage } from "@/lib/pages";
 
 const icons = [
   <KeyRound className="w-7 h-7" />,
@@ -9,13 +10,13 @@ const icons = [
   <ShieldCheck className="w-7 h-7" />,
 ];
 
-const CarKeySection = () => {
+const CarKeySection = ({ heading = "Autoschlüssel kopieren & reparieren in Luzern", showPageLink = true }) => {
   return (
     <section id="autoschluessel" className="scroll-mt-20 py-12 sm:py-16 lg:py-24 bg-secondary/50">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-10 sm:mb-12 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-foreground">
-            Autoschlüssel kopieren & reparieren in Luzern
+            {heading}
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
             Jede Automarke – mit oder ohne Keyless. Wir machen Ihren Zweitschlüssel, programmieren die
@@ -63,6 +64,13 @@ const CarKeySection = () => {
               </span>
             </a>
           </Button>
+          {showPageLink && (
+            <p className="mt-4">
+              <a href={carKeyPage.path} className="text-sm sm:text-base font-semibold text-primary hover:underline">
+                Alles zu Autoschlüsseln in Luzern →
+              </a>
+            </p>
+          )}
         </div>
       </div>
     </section>
