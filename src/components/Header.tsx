@@ -2,8 +2,9 @@ import { MapPin } from "lucide-react";
 import bracaLogo from "@/assets/braca_logo.png";
 
 const navLinks = [
+  { href: "#autoschluessel", label: "Autoschlüssel" },
   { href: "#services", label: "Leistungen" },
-  { href: "#opening-hours", label: "Zeiten" },
+  { href: "#opening-hours", label: "Zeiten", desktopOnly: true },
   { href: "#faq", label: "Fragen" },
   { href: "#contact", label: "Kontakt" },
 ];
@@ -27,7 +28,7 @@ const Header = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-foreground/80 hover:text-primary transition-colors font-medium"
+                  className={`${link.desktopOnly ? "hidden sm:inline " : ""}text-foreground/80 hover:text-primary transition-colors font-medium`}
                 >
                   {link.label}
                 </a>

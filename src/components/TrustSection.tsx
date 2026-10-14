@@ -65,7 +65,7 @@ const TrustSection = () => {
             <h3 className="text-lg sm:text-xl font-bold mb-2 text-primary-foreground">
               Zahlungsmöglichkeiten
             </h3>
-            <p className="text-sm sm:text-base text-primary-foreground/80">
+            <div className="text-sm sm:text-base text-primary-foreground/80">
               <div className="flex items-center justify-center gap-6 sm:gap-8">
                 <div className="flex items-center gap-3">
                   <Wallet className="w-8 h-8 text-accent" />
@@ -80,7 +80,7 @@ const TrustSection = () => {
               <p className="text-sm text-primary-foreground/70 mt-3">
                 Kartenzahlungen sind derzeit nicht möglich
               </p>
-            </p>
+            </div>
           </div>
         </div>
       </div>
