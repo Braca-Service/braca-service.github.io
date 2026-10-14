@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin, Mail, Star } from "lucide-react";
-import { business } from "@/lib/business";
+import { business, serviceArea } from "@/lib/business";
+import { servicePages } from "@/lib/pages";
 
 const Footer = () => {
   return (
@@ -63,6 +64,19 @@ const Footer = () => {
               </a>
             </div>
           </div>
+        </div>
+
+        <div className="text-center text-sm text-muted-foreground border-t border-border pt-6 mb-6 space-y-3">
+          <ul className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+            {servicePages.map((p) => (
+              <li key={p.path}>
+                <a href={p.path} className="font-medium text-foreground hover:text-primary transition-colors">
+                  {p.name} Luzern
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p>Für Kundinnen und Kunden aus {serviceArea.join(", ")} und Umgebung.</p>
         </div>
 
         <div className="text-center text-sm text-muted-foreground border-t border-border pt-6">

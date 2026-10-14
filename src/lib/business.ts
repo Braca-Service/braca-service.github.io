@@ -1,6 +1,6 @@
 // Single source of truth for business/contact data shown across the site.
-// The JSON-LD structured data (src/lib/structuredData.ts) and the prerendered
-// HTML are generated from this file at build time.
+// The JSON-LD structured data (src/lib/structuredData.ts) and the
+// prerendered HTML pages are generated from this file at build time.
 
 export const siteUrl = "https://bracaservice.ch/";
 
@@ -98,54 +98,66 @@ export const carBrands = [
   "Smart",
 ];
 
-export const faq = [
+export type FaqTopic = "auto" | "schluessel" | "schuh";
+
+export const faq: { question: string; answer: string; topics: FaqTopic[] }[] = [
   {
     question: "Kann ich bei euch einen Autoschlüssel kopieren lassen?",
+    topics: ["auto", "schluessel"],
     answer:
       "Ja. Wir kopieren Autoschlüssel aller gängigen Automarken in Luzern – klassische Schlüssel mit Transponder, Funkschlüssel und Keyless-Schlüssel. Rufen Sie kurz an (+41 76 401 88 42) und nennen Sie Marke, Modell und Jahrgang, dann sagen wir Ihnen, was nötig ist.",
   },
   {
     question: "Könnt ihr Keyless-Go-Schlüssel kopieren und programmieren?",
+    topics: ["auto"],
     answer:
       "Ja. Wir kopieren und programmieren sowohl Keyless-Schlüssel (Keyless Entry / Keyless Go / Smart Key) als auch Autoschlüssel ohne Keyless-Funktion.",
   },
   {
     question: "Für welche Automarken macht ihr Autoschlüssel?",
+    topics: ["auto"],
     answer:
       "Für jede gängige Automarke, z. B. VW, Audi, BMW, Mercedes-Benz, Škoda, Seat, Opel, Ford, Renault, Peugeot, Citroën, Fiat, Toyota, Mazda, Nissan, Honda, Hyundai, Kia, Volvo, Mini, Porsche und viele mehr.",
   },
   {
     question: "Kann man einen kaputten Autoschlüssel reparieren?",
+    topics: ["auto"],
     answer:
       "Meistens ja. Wir ersetzen defekte Gehäuse und Klappschlüssel, reparieren Tasten und Platinen und wechseln die Batterie – oft günstiger und schneller als ein neuer Schlüssel von der Garage.",
   },
   {
     question: "Was kostet ein Autoschlüssel mit Wegfahrsperre?",
+    topics: ["auto", "schluessel"],
     answer:
       "Das hängt vom Fahrzeugmodell ab. Rufen Sie uns an oder kommen Sie vorbei für einen kostenlosen Autoschlüsseltest und eine unverbindliche Preisauskunft.",
   },
   {
     question: "Wie lange dauert eine Schuhreparatur?",
+    topics: ["schuh"],
     answer:
       "Kleine Reparaturen dauern meist 30–60 Minuten; Besohlen oder aufwändigere Arbeiten können 1–3 Werktage benötigen.",
   },
   {
     question: "Bietet ihr Express-Service an?",
+    topics: ["schluessel", "schuh"],
     answer:
       "Ja — viele Reparaturen (Absatz, Batteriewechsel, Schlüsselduplikate) erledigen wir oft sofort, während Sie warten.",
   },
   {
     question: "Akzeptiert ihr Markenschuhe und orthopädische Anpassungen?",
+    topics: ["schuh"],
     answer:
       "Wir reparieren Markenschuhe professionell und bieten orthopädische Anpassungen nach Bedarf an.",
   },
   {
     question: "Welche Zahlungsmöglichkeiten gibt es?",
+    topics: ["auto", "schluessel", "schuh"],
     answer:
       "Wir akzeptieren TWINT und Bargeld. Kartenzahlungen sind derzeit leider nicht möglich.",
   },
   {
     question: "Wie kann ich anrufen oder euch besuchen?",
+    topics: ["auto", "schluessel", "schuh"],
     answer:
       "Rufen Sie an: +41 76 401 88 42 oder kommen Sie vorbei: Luzernerstrasse 117, 6014 Luzern. Wir freuen uns auf Ihren Besuch.",
   },

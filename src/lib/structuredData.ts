@@ -1,9 +1,13 @@
 import { business, carBrands, carKeyServices, faq, serviceArea, siteUrl } from "@/lib/business";
+import { homePage, type PageMeta } from "@/lib/pages";
 
-// schema.org JSON-LD for search engines and AI agents. Injected into the
-// prerendered index.html by scripts/prerender.js.
-export const structuredData = () => {
+// schema.org JSON-LD for search engines and AI agents. Injected into each
+// prerendered page by scripts/prerender.js.
+export const structuredData = (page: PageMeta) => {
   const businessId = `${siteUrl}#business`;
+  const pageUrl = new URL(page.path, siteUrl).href;
+  const isHome = page.path === homePage.path;
+  const pageFaq = page.faqTopic ? faq.filter((f) => f.topics.includes(page.faqTopic!)) : faq;
 
   const offer = (name: string, description: string) => ({
     "@type": "Offer",
@@ -111,9 +115,46 @@ export const structuredData = () => {
         publisher: { "@id": businessId },
       },
       {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: page.title,
+        description: page.description,
+        inLanguage: "de-CH",
+        isPartOf: { "@id": `${siteUrl}#website` },
+        about: { "@id": businessId },
+        ...(isHome ? {} : { breadcrumb: { "@id": `${pageUrl}#breadcrumb` } }),
+      },
+      ...(isHome
+        ? []
+        : [
+            {
+              "@type": "BreadcrumbList",
+              "@id": `${pageUrl}#breadcrumb`,
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: homePage.name, item: siteUrl },
+                { "@type": "ListItem", position: 2, name: page.name, item: pageUrl },
+              ],
+            },
+          ]),
+      ...(page.serviceType
+        ? [
+            {
+              "@type": "Service",
+              "@id": `${pageUrl}#service`,
+              name: page.serviceType,
+              serviceType: page.serviceType,
+              description: page.description,
+              url: pageUrl,
+              provider: { "@id": businessId },
+              areaServed: serviceArea.map((name) => ({ "@type": "City", name })),
+            },
+          ]
+        : []),
+      {
         "@type": "FAQPage",
-        "@id": `${siteUrl}#faq`,
-        mainEntity: faq.map((f) => ({
+        "@id": `${pageUrl}#faq`,
+        mainEntity: pageFaq.map((f) => ({
           "@type": "Question",
           name: f.question,
           acceptedAnswer: { "@type": "Answer", text: f.answer },

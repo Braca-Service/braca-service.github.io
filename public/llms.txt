@@ -11,6 +11,13 @@
 - Zahlung: TWINT und Bargeld (keine Kartenzahlung)
 - Einzugsgebiet: Luzern, Littau, Kriens, Emmen, Horw, Ebikon, Root, Malters, Meggen, Adligenswil
 
+## Seiten
+
+- [Startseite](https://bracaservice.ch/): Überblick über alle Leistungen, Öffnungszeiten und Kontakt
+- [Autoschlüssel Luzern](https://bracaservice.ch/autoschluessel-luzern/): Autoschlüssel kopieren, Keyless, Wegfahrsperre, Reparatur
+- [Schlüsseldienst Luzern](https://bracaservice.ch/schluesseldienst-luzern/): Schlüssel nachmachen, Zylinderschlüssel nach Code
+- [Schuhmacher Luzern](https://bracaservice.ch/schuhmacher-luzern/): Schuhreparatur, Absatz, Sohle, orthopädische Anpassungen
+
 ## Autoschlüssel
 
 - Autoschlüssel kopieren / Zweitschlüssel / Ersatzschlüssel inkl. Transponder (Wegfahrsperre)
