@@ -20,7 +20,7 @@ const Hero = () => {
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-2 sm:mb-6 leading-tight text-primary-foreground">
-            Schlüsseldienst & Schuhmacher in Luzern
+            Schlüsseldienst, Autoschlüssel & Schuhmacher in Luzern
           </h1>
 
           <p className="text-lg sm:text-2xl font-semibold mb-3 sm:mb-6 text-accent">
@@ -28,7 +28,7 @@ const Hero = () => {
           </p>
 
           <p className="text-base sm:text-xl lg:text-2xl mb-4 sm:mb-8 text-primary-foreground/95 leading-snug sm:leading-relaxed max-w-2xl">
-            <strong>Kostenloser Autoschlüsseltest</strong> • Express-Schlüsseldienst • Schuhreparaturen • Gravuren & mehr<br />
+            <strong>Autoschlüssel kopieren & reparieren – jede Marke, auch Keyless</strong> • Kostenloser Autoschlüsseltest • Schlüsseldienst • Schuhreparaturen • Gravuren<br />
             <span className="text-accent font-bold">Meist sofort fertig - während Sie warten!</span>
           </p>
 

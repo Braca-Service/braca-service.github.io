@@ -1,11 +1,8 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { ChevronDown } from "lucide-react";
 import { faq } from "@/lib/business";
 
+// Native <details> so the answers are part of the static HTML that
+// search engines and AI agents read, even without JavaScript.
 const FAQSection = () => {
   return (
     <section id="faq" className="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-background">
@@ -19,18 +16,19 @@ const FAQSection = () => {
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="max-w-3xl mx-auto">
-          {faq.map((item, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left text-base sm:text-lg font-semibold">
-                {item.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+        <div className="max-w-3xl mx-auto">
+          {faq.map((item) => (
+            <details key={item.question} className="group border-b border-border">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-left text-base sm:text-lg font-semibold hover:underline [&::-webkit-details-marker]:hidden">
+                <h3>{item.question}</h3>
+                <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180" />
+              </summary>
+              <p className="pb-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
                 {item.answer}
-              </AccordionContent>
-            </AccordionItem>
+              </p>
+            </details>
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   );

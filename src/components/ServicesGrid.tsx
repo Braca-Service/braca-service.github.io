@@ -27,7 +27,7 @@ const services = [
     title: "Schlüsselservice",
     description: "Schlüssel & Autoschlüssel in Luzern - Programmierung & Duplikate",
     items: [
-      "Autoschlüssel mit Wegfahrsperre - Programmierung vor Ort",
+      "Autoschlüssel kopieren & reparieren - alle Marken, auch Keyless",
       "Zylinderschlüssel & Ersatz nach Code",
       "Briefkasten-, Velo- & Motorradschlüssel",
       "Präzisions-Duplikate in Minuten",

@@ -5,7 +5,7 @@ import path from 'path';
 // Edit `routes` if you add more pages or change paths.
 
 const baseUrl = 'https://bracaservice.ch';
-const routes = ['/', '/404'];
+const routes = ["/"];
 
 const today = new Date().toISOString();
 
