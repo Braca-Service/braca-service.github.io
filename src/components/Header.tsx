@@ -5,7 +5,7 @@ const navLinks = [
   { href: "#autoschluessel", label: "Autoschlüssel" },
   { href: "#services", label: "Leistungen" },
   { href: "#opening-hours", label: "Zeiten", desktopOnly: true },
-  { href: "#faq", label: "Fragen" },
+  { href: "#faq", label: "Fragen", desktopOnly: true },
   { href: "#contact", label: "Kontakt" },
 ];
 

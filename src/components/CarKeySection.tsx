@@ -55,10 +55,12 @@ const CarKeySection = () => {
           <p className="text-sm sm:text-base text-muted-foreground mb-6">
             Ihre Marke fehlt? Einfach anrufen – mit Marke, Modell und Jahrgang sagen wir Ihnen sofort, was möglich ist.
           </p>
-          <Button size="lg" className="rounded-xl font-semibold" asChild>
-            <a href={`tel:${business.phoneHref}`} className="flex items-center gap-2 w-fit mx-auto">
+          <Button size="lg" className="rounded-xl font-semibold h-auto min-h-11 py-3 whitespace-normal max-w-full" asChild>
+            <a href={`tel:${business.phoneHref}`} className="flex items-center gap-2 w-fit mx-auto text-center">
               <Phone className="w-5 h-5" />
-              <span>Autoschlüssel anfragen: {business.phoneDisplay}</span>
+              <span>
+                Autoschlüssel anfragen: <span className="whitespace-nowrap">{business.phoneDisplay}</span>
+              </span>
             </a>
           </Button>
         </div>
