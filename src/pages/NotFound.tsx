@@ -8,6 +8,7 @@ const notFoundPage: PageMeta = {
   name: "Seite nicht gefunden",
   title: "Seite nicht gefunden | Braca Service Luzern",
   description: "Diese Seite gibt es nicht.",
+  noindex: true,
 };
 
 const NotFound = () => (

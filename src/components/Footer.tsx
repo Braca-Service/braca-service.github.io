@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="sm:col-span-2 lg:col-span-5">
             <p className="font-display text-[1.75rem] font-bold leading-tight">Braca Service</p>
             <p className="mt-3 max-w-[26rem] text-white/75">
-              Schlüsseldienst, Autoschlüssel und Schuhmacher an der Luzernerstrasse in Luzern.
+              Schlüsseldienst, Autoschlüssel und Schuhmacher an der Luzernerstrasse in Luzern-Littau.
             </p>
             <p className="mt-5">
               <a

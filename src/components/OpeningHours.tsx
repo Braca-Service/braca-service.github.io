@@ -52,7 +52,7 @@ const OpeningHours = () => {
               <br />
               {business.postalCode} {business.locality}
             </span>
-            <span className="mt-1 block text-slate">{business.country}</span>
+            <span className="mt-1 block text-slate">Stadtteil Littau, {business.country}</span>
           </address>
 
           <dl className="mt-8 space-y-5">
