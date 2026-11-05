@@ -27,7 +27,7 @@ export const structuredData = (page: PageMeta) => {
         description:
           "Schlüsseldienst und Schuhmacher in Luzern. Autoschlüssel kopieren und reparieren für jede Automarke – mit und ohne Keyless. Wegfahrsperre programmieren, Schlüssel nachmachen, Schuhreparaturen, Gravuren und Stempel. Verifizierter Partner von dormakaba, Sea, EVVA, Abus und VOX.",
         url: siteUrl,
-        image: `${siteUrl}og-image.jpg`,
+        image: `${siteUrl}og-image.png`,
         logo: `${siteUrl}favicon.png`,
         telephone: business.phoneHref,
         email: business.email,
