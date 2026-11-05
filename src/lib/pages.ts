@@ -12,6 +12,8 @@ export type PageMeta = {
   faqTopic?: FaqTopic;
   // schema.org Service name for the page's main service.
   serviceType?: string;
+  // Keep the page out of search results (the "not found" page).
+  noindex?: boolean;
 };
 
 export const homePage: PageMeta = {

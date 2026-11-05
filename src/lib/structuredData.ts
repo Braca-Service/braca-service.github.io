@@ -1,5 +1,7 @@
-import { business, carBrands, carKeyServices, faq, serviceArea, siteUrl } from "@/lib/business";
+import { business, carBrands, carKeyServices, faq, openingHours, serviceArea, siteUrl } from "@/lib/business";
 import { homePage, type PageMeta } from "@/lib/pages";
+
+const schemaDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 // schema.org JSON-LD for search engines and AI agents. Injected into each
 // prerendered page by scripts/prerender.js.
@@ -47,26 +49,16 @@ export const structuredData = (page: PageMeta) => {
         },
         hasMap: business.mapsLink,
         areaServed: serviceArea.map((name) => ({ "@type": "City", name })),
-        openingHoursSpecification: [
-          {
+        // Generated from the same opening hours the page shows, so they can't drift apart.
+        openingHoursSpecification: openingHours.flatMap((group) => {
+          const days = group.days.map((d) => schemaDays[d]);
+          return group.periods.map(([opens, closes]) => ({
             "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday"],
-            opens: "08:00",
-            closes: "12:00",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday"],
-            opens: "13:00",
-            closes: "17:00",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: "Saturday",
-            opens: "08:00",
-            closes: "14:00",
-          },
-        ],
+            dayOfWeek: days.length === 1 ? days[0] : days,
+            opens,
+            closes,
+          }));
+        }),
         knowsAbout: [
           "Autoschlüssel kopieren",
           "Autoschlüssel reparieren",

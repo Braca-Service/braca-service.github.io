@@ -14,19 +14,40 @@ export default {
     },
     extend: {
       fontFamily: {
+        // Body and UI: built for legibility, with clearly distinct numerals for hours and phone numbers.
         sans: [
-          "Inter",
+          '"Atkinson Hyperlegible Next Variable"',
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
           "Segoe UI",
           "Roboto",
-          "Helvetica Neue",
           "Arial",
           "sans-serif",
         ],
+        // Headings: a slab serif that echoes the "Braca" wordmark in the logo.
+        display: ['"Zilla Slab"', "Rockwell", "Roboto Slab", "Georgia", "serif"],
       },
       colors: {
+        // Braca palette
+        ink: {
+          DEFAULT: "#1b2150", // Tinte: deep logo blue, hero and footer
+          soft: "#2a3168",
+        },
+        brand: "#4a57a3", // Braca-Blau: the logo colour
+        brass: {
+          DEFAULT: "#d6ae52", // Messing: key blanks; reserved for the call button and the key edge
+          light: "#e4c47a",
+        },
+        steel: {
+          DEFAULT: "#e7e9f0", // Stahl: alternate sections
+          light: "#f3f4f8",
+          line: "#cdd1de",
+        },
+        graphite: "#262a40", // body text
+        slate: "#5a5f78", // secondary text
+
+        // shadcn/ui tokens
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -35,8 +56,6 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          light: "hsl(var(--primary-light))",
-          dark: "hsl(var(--primary-dark))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -62,19 +81,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-      },
-      backgroundImage: {
-        'gradient-primary': 'var(--gradient-primary)',
-        'gradient-hero': 'var(--gradient-hero)',
-        'gradient-accent': 'var(--gradient-accent)',
-        'gradient-glass': 'var(--gradient-glass)',
-      },
-      boxShadow: {
-        'brand-sm': 'var(--shadow-sm)',
-        'brand-md': 'var(--shadow-md)',
-        'brand-lg': 'var(--shadow-lg)',
-        'brand-xl': 'var(--shadow-xl)',
-        'brand-2xl': 'var(--shadow-2xl)',
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -1,109 +1,107 @@
-import { Clock, MapPin, Phone, Mail, Star } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { MapPin, Star } from "lucide-react";
+import OpenNow from "@/components/OpenNow";
 import { business, openingHours } from "@/lib/business";
+import { useOpenStatus } from "@/hooks/use-open-status";
+import { cn } from "@/lib/utils";
 
 const OpeningHours = () => {
-  const hours = openingHours;
+  const live = useOpenStatus();
 
   return (
-    <section id="opening-hours" className="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-secondary/50">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-          <Card className="shadow-brand-lg hover:shadow-brand-xl transition-all duration-300 border-border/50 animate-slide-up">
-            <CardHeader className="pb-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-primary flex items-center justify-center mb-4 shadow-brand-md">
-                <Clock className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
-              </div>
-              <CardTitle className="text-xl sm:text-2xl">Öffnungszeiten</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 sm:space-y-4">
-              {hours.map((schedule, index) => {
-                // split on comma and keep NBSP around dash to avoid orphaned dashes
-                const segments = schedule.time
-                  .split(',')
-                  .map(seg => seg.trim().replace(/ - /g, "\u00A0-\u00A0"));
+    <section id="opening-hours" className="scroll-mt-20 bg-steel py-16 sm:py-24">
+      <div className="wrap grid gap-14 lg:grid-cols-12 lg:gap-x-8">
+        <div className="lg:col-span-6">
+          <h2 className="heading-section">Öffnungszeiten</h2>
+          <OpenNow className="mt-4" />
 
-                return (
-                  <div 
-                    key={index} 
-                    className="flex justify-between items-center py-3 border-b border-border/50 last:border-b-0"
-                  >
-                    <span className="font-medium text-foreground text-sm sm:text-base">{schedule.day}</span>
-
-                    <span className="text-primary font-semibold text-sm sm:text-base text-right min-w-0">
-                      {segments.map((seg, i) => (
-                        // render a line break between segments; last segment no trailing <br/>
-                        <span key={i}>
-                          {seg}
-                          {i < segments.length - 1 && <br />}
-                        </span>
-                      ))}
-                    </span>
-                  </div>
-                );
-              })}
-            </CardContent>
-          </Card>
-
-          <Card id="contact" className="scroll-mt-20 shadow-brand-lg hover:shadow-brand-xl transition-all duration-300 border-border/50 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            <CardHeader className="pb-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-primary flex items-center justify-center mb-4 shadow-brand-md">
-                <MapPin className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
-              </div>
-              <CardTitle className="text-xl sm:text-2xl">Kontakt</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 sm:space-y-6">
-              <div className="space-y-4">
-                <div className="flex items-start gap-3 sm:gap-4 group">
-                  <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <div>
-                    <p className="font-medium text-foreground text-sm sm:text-base mb-1">Adresse</p>
-                    <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                      {business.streetAddress}<br />
-                      {business.postalCode} {business.locality}<br />
-                      {business.country}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 sm:gap-4 group">
-                  <Phone className="w-5 h-5 text-primary mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <div>
-                    <p className="font-medium text-foreground text-sm sm:text-base mb-1">Telefon</p>
-                    <a
-                      href={`tel:${business.phoneHref}`}
-                      className="text-primary hover:text-primary-light transition-colors font-medium text-sm sm:text-base"
-                    >
-                      {business.phoneDisplay}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 sm:gap-4 group">
-                  <Mail className="w-5 h-5 text-primary mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <div>
-                    <p className="font-medium text-foreground text-sm sm:text-base mb-1">E-Mail</p>
-                    <a
-                      href={`mailto:${business.email}`}
-                      className="text-primary hover:text-primary-light transition-colors font-medium text-sm sm:text-base break-all"
-                    >
-                      {business.email}
-                    </a>
-                  </div>
-                </div>
-
-                <a
-                  href={business.mapsLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm sm:text-base font-semibold text-accent-foreground bg-accent/20 hover:bg-accent/30 transition-colors rounded-xl px-4 py-3 w-fit"
+          <dl className="mt-8 rounded-lg bg-white px-5 sm:px-7">
+            {openingHours.map((g) => {
+              const isToday = live !== null && g.days.includes(live.clock.day);
+              return (
+                <div
+                  key={g.label}
+                  className="grid grid-cols-[1fr_auto] items-baseline gap-4 border-b border-steel-line py-4 last:border-b-0 sm:py-5"
                 >
-                  <Star className="w-4 h-4 text-accent fill-accent" />
-                  <span>Auf Google bewerten</span>
+                  <dt className={cn("font-bold", isToday ? "text-brand" : "text-ink")}>
+                    {g.label}
+                    {isToday && <span className="ml-2 font-normal">(heute)</span>}
+                  </dt>
+                  <dd className="text-right font-display text-[1.1875rem] font-semibold text-ink">
+                    {g.periods.length ? (
+                      g.periods.map(([o, c]) => (
+                        <span key={o} className="block">
+                          {o}–{c}
+                        </span>
+                      ))
+                    ) : (
+                      <span className="font-sans text-base font-normal text-slate">Geschlossen</span>
+                    )}
+                  </dd>
+                </div>
+              );
+            })}
+          </dl>
+        </div>
+
+        <div id="contact" className="scroll-mt-20 lg:col-span-5 lg:col-start-8">
+          <h2 className="heading-section">Kontakt</h2>
+
+          <address className="mt-6 not-italic">
+            <span className="block font-display text-[1.75rem] font-bold leading-tight text-ink sm:text-[2.25rem]">
+              {business.streetAddress}
+              <br />
+              {business.postalCode} {business.locality}
+            </span>
+            <span className="mt-1 block text-slate">Stadtteil Littau, {business.country}</span>
+          </address>
+
+          <dl className="mt-8 space-y-5">
+            <div>
+              <dt className="text-[0.9375rem] text-slate">Telefon</dt>
+              <dd>
+                <a
+                  href={`tel:${business.phoneHref}`}
+                  className="font-display text-[1.5rem] font-bold text-ink underline decoration-steel-line decoration-2 underline-offset-4 hover:decoration-brand"
+                >
+                  {business.phoneDisplay}
                 </a>
-              </div>
-            </CardContent>
-          </Card>
+              </dd>
+            </div>
+            <div>
+              <dt className="text-[0.9375rem] text-slate">E-Mail</dt>
+              <dd>
+                <a href={`mailto:${business.email}`} className="text-link break-all">
+                  {business.email}
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt className="text-[0.9375rem] text-slate">Bezahlen</dt>
+              <dd>TWINT oder bar. Kartenzahlung ist derzeit nicht möglich.</dd>
+            </div>
+          </dl>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            {/* Phones have "Route" in the fixed call bar. */}
+            <a
+              href={business.mapsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-quiet hidden border-ink/25 text-ink hover:border-ink sm:inline-flex"
+            >
+              <MapPin className="h-5 w-5 shrink-0" aria-hidden="true" />
+              <span>Route planen</span>
+            </a>
+            <a
+              href={business.mapsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-quiet border-ink/25 text-ink hover:border-ink"
+            >
+              <Star className="h-5 w-5 shrink-0" aria-hidden="true" />
+              <span>Auf Google bewerten</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

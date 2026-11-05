@@ -17,13 +17,14 @@ const Shoemaker = () => (
     />
     <ServiceDetail
       heading="Schuhreparaturen beim Schuhmacher in Luzern"
-      intro="Ob Damenabsatz, Herrenschuh, Stiefel oder Wanderschuh – wir reparieren fachgerecht und mit hochwertigem Material."
+      intro="Ob Damenabsatz, Herrenschuh, Stiefel oder Wanderschuh: Wir reparieren fachgerecht und mit hochwertigem Material."
       service={serviceByTitle("Schuhreparaturen")}
     />
     <ServiceDetail
       heading="Näharbeiten"
       intro="Auch Kleidung retten wir: Hosen kürzen, Reissverschlüsse ersetzen und Flicken."
       service={serviceByTitle("Näharbeiten")}
+      tone="steel"
     />
     <FAQSection topic="schuh" heading="Fragen zur Schuhreparatur" />
     <OpeningHours />

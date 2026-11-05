@@ -1,76 +1,42 @@
-import { Button } from "@/components/ui/button";
-import { CheckCircle, Award, Phone } from "lucide-react";
-import heroImage from "@/assets/hero-workshop.jpg";
+import { MapPin } from "lucide-react";
+import HeroShell from "@/components/HeroShell";
+import CallButton from "@/components/CallButton";
+import OpenNow from "@/components/OpenNow";
+import HoursPlate from "@/components/HoursPlate";
+import { business } from "@/lib/business";
 
-const Hero = () => {
-  return (
-    <section className="relative sm:min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary-light/80"></div>
-      </div>
+const Hero = () => (
+  <HeroShell>
+    <div className="grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-end">
+      <div className="lg:col-span-7">
+        <h1 className="text-[clamp(2.125rem,1.25rem+3.7vw,4.5rem)] leading-[1.02] tracking-[-0.015em]">
+          Schlüsseldienst, Autoschlüssel &amp; Schuhmacher in&nbsp;Luzern
+        </h1>
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10 py-6 sm:py-16 lg:py-20">
-        <div className="max-w-3xl animate-slide-up">
-          <div className="inline-flex items-center gap-2 glass-effect border border-primary-foreground/20 text-primary-foreground px-3 py-2 sm:px-4 sm:py-2.5 rounded-full mb-4 sm:mb-8 font-semibold shadow-brand-lg">
-            <Award className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="text-xs sm:text-base">Verifizierte Partner: dormakaba, Sea, EVVA, Abus, VOX</span>
-          </div>
+        <p className="mt-4 max-w-[34rem] text-white/80 sm:mt-6 sm:text-[1.3125rem] sm:leading-normal">
+          Wir kopieren und reparieren Autoschlüssel jeder Marke, auch Keyless. Dazu Schlüssel nachmachen,
+          Schuhreparaturen und Gravuren, vieles während Sie warten.
+        </p>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-2 sm:mb-6 leading-tight text-primary-foreground">
-            Schlüsseldienst, Autoschlüssel & Schuhmacher in Luzern
-          </h1>
+        <OpenNow onInk className="mt-5 lg:hidden" />
 
-          <p className="text-lg sm:text-2xl font-semibold mb-3 sm:mb-6 text-accent">
-            Ausgesperrt? Wir helfen sofort!
-          </p>
-
-          <p className="text-base sm:text-xl lg:text-2xl mb-4 sm:mb-8 text-primary-foreground/95 leading-snug sm:leading-relaxed max-w-2xl">
-            <strong>Autoschlüssel kopieren & reparieren – jede Marke, auch Keyless</strong> • Kostenloser Autoschlüsseltest • Schlüsseldienst • Schuhreparaturen • Gravuren<br />
-            <span className="text-accent font-bold">Meist sofort fertig - während Sie warten!</span>
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4 sm:mb-8">
-            <Button
-              size="lg"
-              className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-brand-xl hover:shadow-brand-2xl transition-all duration-300 hover:scale-105 text-base sm:text-lg px-6 sm:px-8 h-11 sm:h-14 rounded-xl font-semibold"
-              asChild
-            >
-              <a href="tel:+41764018842" className="flex items-center gap-2">
-                <Phone className="w-5 h-5" />
-                <span>Jetzt anrufen</span>
-              </a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="glass-effect text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/20 text-base sm:text-lg px-6 sm:px-8 h-11 sm:h-14 rounded-xl font-semibold"
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Alle Leistungen ansehen
-            </Button>
-          </div>
-
-          <div className="hidden sm:flex sm:flex-wrap gap-3 sm:gap-6 text-primary-foreground/95">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-              <span className="font-medium text-sm sm:text-base">Express-Service verfügbar</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-              <span className="font-medium text-sm sm:text-base">Faire Preise - keine versteckten Kosten</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-              <span className="font-medium text-sm sm:text-base">Tausende zufriedene Kunden</span>
-            </div>
-          </div>
+        {/* On phones the fixed call bar at the bottom carries these two actions. */}
+        <div className="mt-8 hidden flex-wrap gap-3 sm:flex">
+          <CallButton />
+          <a href={business.mapsLink} target="_blank" rel="noopener noreferrer" className="btn-quiet">
+            <MapPin className="h-5 w-5 shrink-0" aria-hidden="true" />
+            <span>Route planen</span>
+          </a>
         </div>
+
+        <p className="mt-8 hidden text-[0.9375rem] text-white/65 sm:block">
+          Verifizierter Partner von dormakaba, Sea, EVVA, Abus und VOX.
+        </p>
       </div>
-    </section>
-  );
-};
+
+      <HoursPlate className="hidden lg:col-span-4 lg:col-start-9 lg:block" />
+    </div>
+  </HeroShell>
+);
 
 export default Hero;

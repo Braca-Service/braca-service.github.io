@@ -1,85 +1,86 @@
-import { Button } from "@/components/ui/button";
-import { Phone, MapPin, Mail, Star } from "lucide-react";
 import { business, serviceArea } from "@/lib/business";
-import { servicePages } from "@/lib/pages";
+import { homePage, servicePages } from "@/lib/pages";
 
 const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border py-8 sm:py-12">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          <div className="text-center md:text-left">
-            <p className="font-bold text-lg sm:text-xl text-foreground mb-3">Braca Service</p>
-            <p className="text-sm text-muted-foreground mb-4">
-              Ihr zuverlässiger Partner für Schlüsseldienst, Schuhreparaturen und Service in Luzern
+    <footer className="on-ink pb-8 pt-14 sm:pt-20">
+      <div className="wrap">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-x-8">
+          <div className="sm:col-span-2 lg:col-span-5">
+            <p className="font-display text-[1.75rem] font-bold leading-tight">Braca Service</p>
+            <p className="mt-3 max-w-[26rem] text-white/75">
+              Schlüsseldienst, Autoschlüssel und Schuhmacher an der Luzernerstrasse in Luzern-Littau.
             </p>
-            <Button
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
-              asChild
-            >
-              <a href={`tel:${business.phoneHref}`} className="flex items-center gap-2 mx-auto md:mx-0 w-fit">
-                <Phone className="w-4 h-4" />
-                <span>Jetzt anrufen</span>
-              </a>
-            </Button>
-          </div>
-
-          <div className="text-center">
-            <p className="font-semibold text-foreground mb-3">Kontakt</p>
-            <div className="space-y-2 text-sm text-muted-foreground">
-              <a href={`tel:${business.phoneHref}`} className="flex items-center gap-2 hover:text-primary transition-colors justify-center">
-                <Phone className="w-4 h-4" />
+            <p className="mt-5">
+              <a
+                href={`tel:${business.phoneHref}`}
+                className="font-display text-[1.5rem] font-bold underline decoration-white/30 decoration-2 underline-offset-4 hover:decoration-brass"
+              >
                 {business.phoneDisplay}
               </a>
-              <a href={`mailto:${business.email}`} className="flex items-center gap-2 hover:text-primary transition-colors justify-center">
-                <Mail className="w-4 h-4" />
+            </p>
+            <p className="mt-1">
+              <a href={`mailto:${business.email}`} className="text-white/85 underline-offset-4 hover:underline">
                 {business.email}
               </a>
-              <a
-                href={business.mapsLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-primary transition-colors justify-center"
-              >
-                <Star className="w-4 h-4" />
-                Auf Google bewerten
-              </a>
-            </div>
+            </p>
           </div>
 
-          <div className="text-center md:text-right">
-            <p className="font-semibold text-foreground mb-3">Standort</p>
-            <div className="text-sm text-muted-foreground">
-              <a
-                href={business.mapsLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-primary transition-colors justify-center md:justify-end"
-              >
-                <MapPin className="w-4 h-4" />
-                <span>
-                  {business.streetAddress}<br />
-                  {business.postalCode} {business.locality}
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center text-sm text-muted-foreground border-t border-border pt-6 mb-6 space-y-3">
-          <ul className="flex flex-wrap justify-center gap-x-4 gap-y-2">
-            {servicePages.map((p) => (
-              <li key={p.path}>
-                <a href={p.path} className="font-medium text-foreground hover:text-primary transition-colors">
-                  {p.name} Luzern
+          <div className="lg:col-span-3">
+            <p className="font-bold">Leistungen</p>
+            <ul className="mt-3 space-y-2">
+              {servicePages.map((p) => (
+                <li key={p.path}>
+                  <a href={p.path} className="text-white/85 underline-offset-4 hover:text-white hover:underline">
+                    {p.name} Luzern
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  href={`${homePage.path}#services`}
+                  className="text-white/85 underline-offset-4 hover:text-white hover:underline"
+                >
+                  Alle Leistungen
                 </a>
               </li>
-            ))}
-          </ul>
-          <p>Für Kundinnen und Kunden aus {serviceArea.join(", ")} und Umgebung.</p>
+            </ul>
+          </div>
+
+          <div className="lg:col-span-4">
+            <p className="font-bold">Adresse</p>
+            <address className="mt-3 not-italic text-white/85">
+              {business.streetAddress}
+              <br />
+              {business.postalCode} {business.locality}
+            </address>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <a
+                  href={business.mapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/85 underline-offset-4 hover:text-white hover:underline"
+                >
+                  Route planen
+                </a>
+              </li>
+              <li>
+                <a
+                  href={business.mapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/85 underline-offset-4 hover:text-white hover:underline"
+                >
+                  Auf Google bewerten
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className="text-center text-sm text-muted-foreground border-t border-border pt-6">
+        <div className="mt-12 space-y-2 border-t border-white/20 pt-6 text-[0.9375rem] text-white/65">
+          <p>Für Kundinnen und Kunden aus {serviceArea.join(", ")} und Umgebung.</p>
           <p>&copy; {new Date().getFullYear()} Braca Service. Alle Rechte vorbehalten.</p>
         </div>
       </div>

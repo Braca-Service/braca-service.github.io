@@ -1,7 +1,6 @@
-import { Phone } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
-import { Button } from "@/components/ui/button";
-import { business } from "@/lib/business";
+import HeroShell from "@/components/HeroShell";
+import CallButton from "@/components/CallButton";
 import { homePage, servicePages, type PageMeta } from "@/lib/pages";
 
 const notFoundPage: PageMeta = {
@@ -9,31 +8,32 @@ const notFoundPage: PageMeta = {
   name: "Seite nicht gefunden",
   title: "Seite nicht gefunden | Braca Service Luzern",
   description: "Diese Seite gibt es nicht.",
+  noindex: true,
 };
 
 const NotFound = () => (
   <PageLayout page={notFoundPage}>
-    <section className="py-16 sm:py-24">
-      <div className="container mx-auto px-4 lg:px-8 max-w-2xl text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-foreground">Seite nicht gefunden</h1>
-        <p className="text-lg text-muted-foreground mb-8">
-          Diese Seite gibt es leider nicht. Vielleicht suchen Sie eine dieser Seiten:
-        </p>
-        <ul className="flex flex-wrap justify-center gap-3 mb-8">
+    <HeroShell>
+      <h1 className="text-[clamp(2rem,1.3rem+3vw,3.75rem)] leading-[1.04]">Seite nicht gefunden</h1>
+      <p className="mt-4 max-w-[36rem] text-white/80 sm:text-[1.3125rem]">
+        Diese Adresse gibt es auf bracaservice.ch nicht. Wählen Sie eine dieser Seiten oder rufen Sie uns an.
+      </p>
+      <CallButton className="mt-8 hidden sm:inline-flex" />
+    </HeroShell>
+    <section className="py-14 sm:py-20">
+      <div className="wrap">
+        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {[homePage, ...servicePages].map((p) => (
             <li key={p.path}>
-              <a href={p.path} className="inline-block px-4 py-2 rounded-xl border border-border font-semibold text-primary hover:border-primary">
+              <a
+                href={p.path}
+                className="block rounded-lg border-2 border-steel-line px-5 py-4 font-display text-[1.3125rem] font-bold text-ink transition-colors hover:border-brand hover:text-brand"
+              >
                 {p.name}
               </a>
             </li>
           ))}
         </ul>
-        <Button size="lg" className="rounded-xl font-semibold" asChild>
-          <a href={`tel:${business.phoneHref}`} className="inline-flex items-center gap-2">
-            <Phone className="w-5 h-5" />
-            <span>{business.phoneDisplay}</span>
-          </a>
-        </Button>
       </div>
     </section>
   </PageLayout>

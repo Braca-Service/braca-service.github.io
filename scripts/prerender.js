@@ -15,8 +15,18 @@ const { render, structuredData, pages, siteUrl } = await import(
   pathToFileURL(path.join(ssrDir, 'entry-server.js')).href
 );
 
-const template = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
+let template = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
 if (!template.includes('<div id="root"></div>')) throw new Error('root placeholder not found in dist/index.html');
+
+// Preload the two fonts needed for the first screen (headline and body text)
+// so the hero renders in its final fonts sooner (better LCP, less layout shift).
+const assetFiles = fs.readdirSync(path.join(distDir, 'assets'));
+const preloadFonts = [/^zilla-slab-latin-700-normal-.*\.woff2$/, /^atkinson-hyperlegible-next-latin-wght-normal-.*\.woff2$/].map((pattern) => {
+  const file = assetFiles.find((f) => pattern.test(f));
+  if (!file) throw new Error(`font to preload not found in dist/assets: ${pattern}`);
+  return `<link rel="preload" href="/assets/${file}" as="font" type="font/woff2" crossorigin />`;
+});
+template = template.replace('<link rel="icon"', `${preloadFonts.join('\n    ')}\n    <link rel="icon"`);
 
 const escapeAttr = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 

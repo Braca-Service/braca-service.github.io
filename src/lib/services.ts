@@ -1,111 +1,103 @@
-import { Key, Scissors, Pen, Stamp, Settings, Edit3, Tag, type LucideIcon } from "lucide-react";
-
 export type Service = {
-  icon: LucideIcon;
   title: string;
   description: string;
   items: string[];
   // Dedicated landing page for this service, if there is one.
   href?: string;
+  // Text for the link to that page.
+  linkLabel?: string;
 };
 
 export const services: Service[] = [
   {
-    icon: Scissors,
-    title: "Schuhreparaturen",
-    description: "Absatz- und Sohlenreparatur in Luzern — nachhaltig & hochwertig",
-    href: "/schuhmacher-luzern/",
-    items: [
-      "Absatz ersetzen - schnelle Reparatur vor Ort",
-      "Sohlen ersetzen & neu besohlen für langanhaltenden Schutz",
-      "Orthopädische Anpassungen für mehr Komfort",
-      "Weiten & Anpassungen für perfekte Passform",
-      "Wanderschuh-Service & Imprägnierung",
-    ],
-  },
-  {
-    icon: Key,
     title: "Schlüsselservice",
-    description: "Schlüssel & Autoschlüssel in Luzern - Programmierung & Duplikate",
+    description: "Schlüssel nachmachen und Autoschlüssel programmieren, meist in wenigen Minuten.",
     href: "/schluesseldienst-luzern/",
+    linkLabel: "Mehr zum Schlüsseldienst",
     items: [
-      "Autoschlüssel kopieren & reparieren - alle Marken, auch Keyless",
-      "Zylinderschlüssel & Ersatz nach Code",
-      "Briefkasten-, Velo- & Motorradschlüssel",
-      "Präzisions-Duplikate in Minuten",
-      "Spezial- & Markenschlüssel: EVVA, Abus, dormakaba",
+      "Autoschlüssel kopieren und reparieren, alle Marken, auch Keyless",
+      "Zylinderschlüssel und Ersatzschlüssel nach Code",
+      "Briefkasten-, Velo- und Motorradschlüssel",
+      "Präzise Duplikate in wenigen Minuten",
+      "Spezial- und Markenschlüssel von EVVA, Abus und dormakaba",
     ],
   },
   {
-    icon: Pen,
-    title: "Gravuren",
-    description: "Präzise Gravuren in Luzern — Namensschilder, Tür- und Briefkastenschild",
+    title: "Schuhreparaturen",
+    description: "Absätze, Sohlen und Anpassungen in Luzern. Reparieren statt wegwerfen.",
+    href: "/schuhmacher-luzern/",
+    linkLabel: "Mehr zur Schuhreparatur",
     items: [
-      "Briefkasten- & Klingelschilder in verschiedenen Materialien",
+      "Absatz ersetzen, oft direkt vor Ort",
+      "Sohlen ersetzen und Schuhe neu besohlen",
+      "Orthopädische Anpassungen für mehr Komfort",
+      "Schuhe weiten und anpassen",
+      "Wanderschuh-Service und Imprägnierung",
+    ],
+  },
+  {
+    title: "Gravuren",
+    description: "Schilder und Gravuren für Haus, Büro und Geschenk.",
+    items: [
+      "Briefkasten- und Klingelschilder in verschiedenen Materialien",
       "Wetterfeste Türschilder nach Mass",
-      "Personalisierte Namensschilder für privat & Business",
+      "Namensschilder für privat und Geschäft",
       "Hundemarken und Geschenkgravuren",
       "Express-Gravuren möglich",
     ],
   },
   {
-    icon: Stamp,
     title: "Stempel",
-    description: "In 24h bereit! Professionell & nachhaltig",
+    description: "Individuelle Stempel, in 24 Stunden bereit.",
     items: [
-      "Express: Morgen bestellt - übermorgen fertig!",
-      "11 Grössen & 4 Farben - für jeden Zweck",
-      "100% individuell nach Ihrem Design",
-      "Automatikstempel - keine Stempelkissen nötig",
-      "Nachfüllbar - spart Geld & schont die Umwelt",
+      "Express: heute bestellt, morgen fertig",
+      "11 Grössen und 4 Farben",
+      "Gestaltet nach Ihrer Vorlage",
+      "Automatikstempel, kein Stempelkissen nötig",
+      "Nachfüllbar statt neu kaufen",
     ],
   },
   {
-    icon: Settings,
     title: "Schleifarbeiten",
-    description: "Rasiermesserscharf - wie neu in Minuten!",
+    description: "Messer und Gartenwerkzeug wieder scharf, meist während Sie warten.",
     items: [
-      "Küchenmesser schärfer als beim Kauf!",
-      "Heckenscheren - schneiden wie Butter",
-      "Rasenmähermesser perfekt geschliffen",
-      "Scheren & Äxte - profi-scharf",
-      "Sofort-Service - meist während Sie warten",
+      "Küchenmesser",
+      "Scheren und Äxte",
+      "Heckenscheren",
+      "Rasenmähermesser",
     ],
   },
   {
-    icon: Edit3,
     title: "Näharbeiten",
-    description: "Lieblingsteile retten - perfekte Passform garantiert!",
+    description: "Kleider ändern und flicken.",
     items: [
-      "Hosen kürzen - sitzt wie angegossen",
-      "Reissverschluss kaputt? Schnell ersetzt!",
-      "Flicken unsichtbar - sieht aus wie neu",
-      "Änderungen aller Art - massgeschneidert",
-      "Express möglich - wenn's pressiert",
+      "Hosen kürzen",
+      "Reissverschlüsse ersetzen",
+      "Flicken, so unauffällig wie möglich",
+      "Änderungen aller Art",
+      "Express möglich",
     ],
   },
   {
-    icon: Tag,
     title: "Beschriftungen",
-    description: "Ihr Auftritt zählt - professionell beschriftet!",
+    description: "Schilder und Beschriftungen für Firma und Parkplatz.",
     items: [
-      "Parkplatzschilder - wetterfest & langlebig",
-      "Firmenschilder - repräsentativ & edel",
-      "Magnetschilder - flexibel einsetzbar",
-      "Individuelle Beschriftungen aller Art",
-      "Beratung inklusive - wir helfen bei der Gestaltung",
+      "Parkplatzschilder, wetterfest",
+      "Firmenschilder",
+      "Magnetschilder",
+      "Individuelle Beschriftungen",
+      "Beratung zur Gestaltung inklusive",
     ],
   },
   {
-    icon: Settings,
     title: "Weitere Services",
-    description: "Kleine Reparaturen statt teurer Neukauf!",
+    description: "Kleine Reparaturen statt Neukauf.",
     items: [
-      "Fernbedienungen reparieren - in Minuten",
-      "Schlüsselgehäuse kaputt? Sofort ersetzt!",
-      "Batteriewechsel Uhren & Autoschlüssel",
-      "Uhrbänder kürzen - perfekte Länge",
-      "Und vieles mehr - einfach fragen!",
+      "Fernbedienungen reparieren",
+      "Schlüsselgehäuse ersetzen",
+      "Batteriewechsel für Uhren und Autoschlüssel",
+      "Uhrbänder kürzen",
+      "Und vieles mehr, fragen Sie einfach",
     ],
   },
 ];
