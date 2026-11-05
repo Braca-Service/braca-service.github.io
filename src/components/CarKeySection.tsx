@@ -1,76 +1,61 @@
-import { Car, KeyRound, Wrench, ShieldCheck, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { business, carBrands, carKeyServices } from "@/lib/business";
+import CallButton from "@/components/CallButton";
+import { carBrands, carKeyServices } from "@/lib/business";
 import { carKeyPage } from "@/lib/pages";
 
-const icons = [
-  <KeyRound className="w-7 h-7" />,
-  <Car className="w-7 h-7" />,
-  <Wrench className="w-7 h-7" />,
-  <ShieldCheck className="w-7 h-7" />,
-];
+// Alphabetical, so people can scan for their brand.
+const brandsAz = [...carBrands].sort((a, b) => a.localeCompare(b, "de"));
 
 const CarKeySection = ({ heading = "Autoschlüssel kopieren & reparieren in Luzern", showPageLink = true }) => {
   return (
-    <section id="autoschluessel" className="scroll-mt-20 py-12 sm:py-16 lg:py-24 bg-secondary/50">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-10 sm:mb-12 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-foreground">
-            {heading}
-          </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Jede Automarke – mit oder ohne Keyless. Wir machen Ihren Zweitschlüssel, programmieren die
-            Wegfahrsperre und reparieren defekte Funkschlüssel. Oft günstiger und schneller als in der Garage.
+    <section id="autoschluessel" className="scroll-mt-20 pb-16 pt-10 sm:pb-24 sm:pt-16">
+      <div className="wrap grid gap-10 lg:grid-cols-12 lg:gap-x-8">
+        <div className="lg:col-span-5">
+          <h2 className="heading-section">{heading}</h2>
+          <p className="lead mt-5">
+            Jede Automarke, mit oder ohne Keyless. Wir machen Ihren Zweitschlüssel, programmieren die Wegfahrsperre
+            und reparieren defekte Funkschlüssel. Oft günstiger und schneller als in der Garage.
           </p>
+          <div className="mt-8 flex flex-col items-start gap-5">
+            {/* Phones use the fixed call bar instead. */}
+            <CallButton label="Autoschlüssel anfragen:" className="hidden max-w-full text-left sm:inline-flex" />
+            {showPageLink && (
+              <a href={carKeyPage.path} className="text-link">
+                Alles zu Autoschlüsseln in Luzern
+              </a>
+            )}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10 sm:mb-12">
-          {carKeyServices.map((service, index) => (
-            <div key={service.title} className="bg-card border border-border/50 rounded-2xl p-6 shadow-brand-sm">
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 bg-primary/10 text-primary">
-                {icons[index]}
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-foreground">{service.title}</h3>
-              <p className="text-sm sm:text-base text-muted-foreground">{service.description}</p>
-            </div>
+        <ul className="border-t-2 border-ink lg:col-span-7 lg:col-start-6">
+          {carKeyServices.map((service) => (
+            <li
+              key={service.title}
+              className="grid gap-1.5 border-b border-steel-line py-5 sm:grid-cols-[minmax(0,15rem)_1fr] sm:gap-8 sm:py-6"
+            >
+              <h3 className="heading-sub">{service.title}</h3>
+              <p className="text-slate">{service.description}</p>
+            </li>
           ))}
-        </div>
+        </ul>
+      </div>
 
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-xl sm:text-2xl font-bold mb-4 text-foreground">
-            Autoschlüssel für alle Marken
-          </h3>
-          <ul className="flex flex-wrap justify-center gap-2 mb-6">
-            {carBrands.map((brand) => (
-              <li
-                key={brand}
-                className="px-3 py-1.5 rounded-full bg-card border border-border text-sm font-medium text-foreground"
-              >
+      <div className="wrap mt-14 sm:mt-20">
+        <div className="grid gap-8 rounded-lg bg-steel px-5 py-8 sm:p-10 lg:grid-cols-12 lg:gap-x-8">
+          <div className="lg:col-span-4">
+            <h3 className="heading-sub">Autoschlüssel für alle Marken</h3>
+            <p className="mt-3 text-slate">
+              Ihre Marke fehlt? Einfach anrufen. Mit Marke, Modell und Jahrgang sagen wir Ihnen sofort, was möglich
+              ist.
+            </p>
+          </div>
+          <ul className="columns-2 gap-x-6 font-display text-[1.0625rem] font-semibold text-ink min-[420px]:columns-3 sm:text-[1.125rem] md:columns-4 lg:col-span-8">
+            {brandsAz.map((brand) => (
+              <li key={brand} className="break-inside-avoid border-b border-steel-line py-1.5">
                 {brand}
               </li>
             ))}
-            <li className="px-3 py-1.5 rounded-full bg-card border border-border text-sm font-medium text-muted-foreground">
-              und weitere
-            </li>
+            <li className="break-inside-avoid py-1.5 font-sans text-base font-normal text-slate">und weitere</li>
           </ul>
-          <p className="text-sm sm:text-base text-muted-foreground mb-6">
-            Ihre Marke fehlt? Einfach anrufen – mit Marke, Modell und Jahrgang sagen wir Ihnen sofort, was möglich ist.
-          </p>
-          <Button size="lg" className="rounded-xl font-semibold h-auto min-h-11 py-3 whitespace-normal max-w-full" asChild>
-            <a href={`tel:${business.phoneHref}`} className="flex items-center gap-2 w-fit mx-auto text-center">
-              <Phone className="w-5 h-5" />
-              <span>
-                Autoschlüssel anfragen: <span className="whitespace-nowrap">{business.phoneDisplay}</span>
-              </span>
-            </a>
-          </Button>
-          {showPageLink && (
-            <p className="mt-4">
-              <a href={carKeyPage.path} className="text-sm sm:text-base font-semibold text-primary hover:underline">
-                Alles zu Autoschlüsseln in Luzern →
-              </a>
-            </p>
-          )}
         </div>
       </div>
     </section>

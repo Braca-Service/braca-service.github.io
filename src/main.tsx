@@ -1,5 +1,8 @@
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import "@fontsource/zilla-slab/600.css";
+import "@fontsource/zilla-slab/700.css";
+import "@fontsource-variable/atkinson-hyperlegible-next";
 import App from "./App.tsx";
 import "./index.css";
 

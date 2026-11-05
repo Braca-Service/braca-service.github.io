@@ -1,5 +1,8 @@
-import { Phone, MapPin, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { MapPin } from "lucide-react";
+import HeroShell from "@/components/HeroShell";
+import CallButton from "@/components/CallButton";
+import OpenNow from "@/components/OpenNow";
+import HoursPlate from "@/components/HoursPlate";
 import { business } from "@/lib/business";
 import { homePage, type PageMeta } from "@/lib/pages";
 
@@ -12,67 +15,50 @@ type Props = {
 
 const LandingHero = ({ page, heading, intro, highlights }: Props) => {
   return (
-    <section className="bg-gradient-hero text-primary-foreground py-8 sm:py-14 lg:py-20">
-      <div className="container mx-auto px-4 lg:px-8">
-        <nav aria-label="Breadcrumb" className="mb-4 sm:mb-6 text-sm text-primary-foreground/80">
-          <ol className="flex items-center gap-1">
-            <li>
-              <a href={homePage.path} className="hover:underline">
-                {homePage.name}
-              </a>
-            </li>
-            <li aria-hidden="true">
-              <ChevronRight className="w-4 h-4" />
-            </li>
-            <li aria-current="page" className="font-medium text-primary-foreground">
-              {page.name}
-            </li>
-          </ol>
-        </nav>
+    <HeroShell>
+      <nav aria-label="Breadcrumb" className="mb-5 text-[0.9375rem] text-white/70 sm:mb-8">
+        <ol className="flex items-center gap-2">
+          <li>
+            <a href={homePage.path} className="underline-offset-4 hover:text-white hover:underline">
+              {homePage.name}
+            </a>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" className="font-bold text-white">
+            {page.name}
+          </li>
+        </ol>
+      </nav>
 
-        <div className="max-w-3xl">
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-3 sm:mb-6 leading-tight">{heading}</h1>
-          <p className="text-base sm:text-xl mb-5 sm:mb-8 text-primary-foreground/95 leading-snug sm:leading-relaxed">
-            {intro}
-          </p>
+      <div className="grid gap-x-8 gap-y-10 lg:grid-cols-12 lg:items-end">
+        <div className="lg:col-span-7">
+          <h1 className="text-[clamp(2rem,1.3rem+3vw,3.75rem)] leading-[1.04] tracking-[-0.01em]">{heading}</h1>
+          <p className="mt-4 max-w-[36rem] text-white/80 sm:mt-6 sm:text-[1.3125rem] sm:leading-normal">{intro}</p>
 
-          <ul className="flex flex-wrap gap-2 mb-6 sm:mb-8">
+          <ul className="mt-6 grid gap-x-6 gap-y-2 sm:grid-cols-2">
             {highlights.map((h) => (
-              <li
-                key={h}
-                className="glass-effect border border-primary-foreground/20 rounded-full px-3 py-1.5 text-sm font-medium"
-              >
+              <li key={h} className="flex items-baseline gap-3 font-bold">
+                <span aria-hidden="true" className="h-2 w-2 shrink-0 translate-y-[-0.1em] bg-brass" />
                 {h}
               </li>
             ))}
           </ul>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <Button
-              size="lg"
-              className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-brand-xl text-base sm:text-lg px-6 sm:px-8 h-11 sm:h-14 rounded-xl font-semibold"
-              asChild
-            >
-              <a href={`tel:${business.phoneHref}`} className="flex items-center gap-2">
-                <Phone className="w-5 h-5" />
-                <span>{business.phoneDisplay}</span>
-              </a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="glass-effect text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/20 text-base sm:text-lg px-6 sm:px-8 h-11 sm:h-14 rounded-xl font-semibold"
-              asChild
-            >
-              <a href={business.mapsLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                <MapPin className="w-5 h-5" />
-                <span>{business.streetAddress}, Luzern</span>
-              </a>
-            </Button>
+          <OpenNow onInk className="mt-6 lg:hidden" />
+
+          {/* On phones the fixed call bar at the bottom carries these two actions. */}
+          <div className="mt-8 hidden flex-wrap gap-3 sm:flex">
+            <CallButton />
+            <a href={business.mapsLink} target="_blank" rel="noopener noreferrer" className="btn-quiet">
+              <MapPin className="h-5 w-5 shrink-0" aria-hidden="true" />
+              <span>{business.streetAddress}, Luzern</span>
+            </a>
           </div>
         </div>
+
+        <HoursPlate className="hidden lg:col-span-4 lg:col-start-9 lg:block" />
       </div>
-    </section>
+    </HeroShell>
   );
 };
 

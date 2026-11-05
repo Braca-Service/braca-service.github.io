@@ -2,135 +2,207 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/*
+  Braca Service design system.
+  Palette: Tinte #1b2150 (ink), Braca-Blau #4a57a3 (logo), Messing #d6ae52 (brass),
+  Stahl #e7e9f0 (steel). Brass is reserved for the call button and the key edge.
+  Type: Zilla Slab (headings) + Atkinson Hyperlegible Next (body), scale
+  14 / 16 / 18 / 21 / 24 / 36 / 48 / 60 / 72 px.
+  shadcn/ui tokens below are HSL triplets mapped onto the same palette.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 228 45% 15%;
+    --background: 0 0% 100%;
+    --foreground: 231 26% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 228 45% 15%;
+    --card-foreground: 231 26% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 228 45% 15%;
+    --popover-foreground: 231 26% 20%;
 
-    /* Brand color #4a57a3 */
     --primary: 231 38% 46%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 231 38% 60%;
-    --primary-dark: 231 38% 36%;
 
-    --secondary: 231 20% 97%;
-    --secondary-foreground: 228 45% 15%;
+    --secondary: 228 22% 93%;
+    --secondary-foreground: 231 50% 21%;
 
-    --muted: 228 15% 94%;
-    --muted-foreground: 228 20% 45%;
+    --muted: 228 22% 93%;
+    --muted-foreground: 230 14% 41%;
 
-    --accent: 45 93% 58%;
-    --accent-foreground: 228 45% 15%;
+    --accent: 42 61% 58%;
+    --accent-foreground: 231 50% 21%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 228 15% 88%;
-    --input: 228 15% 94%;
+    --border: 227 20% 84%;
+    --input: 227 20% 84%;
     --ring: 231 38% 46%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
-    /* Modern Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(231 38% 46%) 0%, hsl(231 50% 60%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(231 45% 42%) 0%, hsl(231 40% 52%) 50%, hsl(231 38% 56%) 100%);
-    --gradient-accent: linear-gradient(120deg, hsl(231 38% 46%) 0%, hsl(45 93% 58%) 100%);
-    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.1) 0%, hsl(0 0% 100% / 0.05) 100%);
-    
-    /* Modern Shadows */
-    --shadow-sm: 0 2px 8px -2px hsl(231 38% 46% / 0.08);
-    --shadow-md: 0 4px 16px -4px hsl(231 38% 46% / 0.12);
-    --shadow-lg: 0 8px 32px -8px hsl(231 38% 46% / 0.16);
-    --shadow-xl: 0 16px 48px -12px hsl(231 38% 46% / 0.24);
-    --shadow-2xl: 0 24px 64px -16px hsl(231 38% 46% / 0.32);
+    /* Focus ring colour; dark sections switch it to brass. */
+    --focus: #4a57a3;
+
+    /* Lets <details> answers open smoothly where supported. */
+    interpolate-size: allow-keywords;
   }
 
-  .dark {
-    --background: 228 45% 8%;
-    --foreground: 0 0% 95%;
-
-    --card: 228 40% 12%;
-    --card-foreground: 0 0% 95%;
-
-    --popover: 228 40% 12%;
-    --popover-foreground: 0 0% 95%;
-
-    --primary: 231 38% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 231 38% 70%;
-    --primary-dark: 231 38% 50%;
-
-    --secondary: 228 40% 16%;
-    --secondary-foreground: 0 0% 95%;
-
-    --muted: 228 40% 16%;
-    --muted-foreground: 228 20% 65%;
-
-    --accent: 45 93% 58%;
-    --accent-foreground: 228 45% 8%;
-
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 95%;
-
-    --border: 228 40% 20%;
-    --input: 228 40% 20%;
-    --ring: 231 38% 60%;
-  }
-}
-
-/* Modern Animations */
-@layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-  
-  .animate-slide-up {
-    animation: slideUp 0.6s ease-out;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .glass-effect {
-    background: var(--gradient-glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white font-sans text-graphite antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    font-size-adjust: from-font;
+  }
+
+  @media (min-width: 640px) {
+    body {
+      font-size: 1.125rem;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-ink;
+    font-weight: 700;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  /* Long German compounds (Schlüsseldienst) may only be hyphenated on narrow phones. */
+  @media (max-width: 639px) {
+    h1,
+    h2,
+    h3 {
+      hyphens: auto;
+      hyphenate-limit-chars: 12 5 5;
+    }
+  }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: #d6ae52;
+    color: #1b2150;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-[75rem] px-4 sm:px-6 lg:px-8;
+  }
+
+  .on-ink {
+    --focus: #d6ae52;
+    @apply bg-ink text-white;
+  }
+
+  .on-ink :is(h1, h2, h3) {
+    @apply text-white;
+  }
+
+  .heading-section {
+    font-size: clamp(1.875rem, 1.35rem + 2.1vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+  }
+
+  .heading-sub {
+    font-size: clamp(1.3125rem, 1.2rem + 0.4vw, 1.5rem);
+    line-height: 1.2;
+  }
+
+  .lead {
+    @apply max-w-[36rem] text-slate;
+    font-size: clamp(1.0625rem, 0.98rem + 0.4vw, 1.3125rem);
+    line-height: 1.5;
+  }
+
+  /* The one button style that matters: call the shop. */
+  .btn-call {
+    @apply inline-flex min-h-12 items-center justify-center gap-2.5 rounded-lg bg-brass px-5 py-2.5 font-display text-[1.1875rem] font-bold leading-tight text-ink transition-colors hover:bg-brass-light;
+  }
+
+  .btn-quiet {
+    @apply inline-flex min-h-12 items-center justify-center gap-2.5 rounded-lg border-2 px-5 py-2.5 font-bold transition-colors;
+  }
+
+  .on-ink .btn-quiet {
+    @apply border-white/35 text-white hover:border-white hover:bg-white/5;
+  }
+
+  .text-link {
+    @apply font-bold text-brand underline decoration-brand/40 decoration-2 underline-offset-4 transition-colors hover:decoration-brand;
+  }
+
+  /* FAQ answers: <details> stays native so answers are in the static HTML. */
+  .faq-item summary {
+    list-style: none;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+      block-size 0.25s ease,
+      content-visibility 0.25s allow-discrete;
+  }
+
+  .faq-item[open]::details-content {
+    block-size: auto;
+  }
+}
+
+/* The brass line along the key edge is traced once on load, like the key machine following a cut. */
+.key-trace {
+  animation: key-trace 1.4s cubic-bezier(0.55, 0, 0.25, 1) 0.2s both;
+}
+
+@keyframes key-trace {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .key-trace {
+    animation: none;
+  }
+
+  .faq-item::details-content {
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }

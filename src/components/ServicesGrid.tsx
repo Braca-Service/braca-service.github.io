@@ -1,55 +1,49 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/services";
+
+// The two trades with their own pages get room; the rest form a compact index.
+const main = services.filter((s) => s.href);
+const more = services.filter((s) => !s.href);
 
 const ServicesGrid = () => {
   return (
-    <section id="services" className="scroll-mt-20 py-12 sm:py-16 lg:py-24 bg-background">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-10 sm:mb-12 lg:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-foreground">
-            Unsere Leistungen in Luzern
-          </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Schlüsselservice, Schuhreparaturen, Gravuren und mehr — meist sofort erledigt, fachgerecht und fair bepreist.
+    <section id="services" className="scroll-mt-20 py-16 sm:py-24">
+      <div className="wrap">
+        <div className="grid gap-5 lg:grid-cols-12 lg:items-end lg:gap-x-8">
+          <h2 className="heading-section lg:col-span-6">Unsere Leistungen in Luzern</h2>
+          <p className="lead lg:col-span-5 lg:col-start-8">
+            Schlüsselservice, Schuhreparaturen, Gravuren und mehr. Meist sofort erledigt, fachgerecht und fair
+            bepreist.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className="group hover:shadow-brand-xl transition-all duration-300 hover:-translate-y-2 border-border/50 animate-slide-up"
-              style={{ animationDelay: `${index * 0.05}s` }}
-            >
-              <CardHeader className="pb-4">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 bg-primary/10 text-primary group-hover:bg-primary/15">
-                  <service.icon className="w-7 h-7 sm:w-8 sm:h-8" />
-                </div>
-                <CardTitle className="text-lg sm:text-xl">{service.title}</CardTitle>
-                <CardDescription className="text-sm sm:text-base">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {service.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <span className="text-primary mt-0.5 font-bold">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                {service.href && (
-                  <a
-                    href={service.href}
-                    className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline"
-                  >
-                    Mehr zu {service.title} <ArrowRight className="w-4 h-4" />
-                  </a>
-                )}
-              </CardContent>
-            </Card>
+
+        <div className="mt-10 grid gap-5 sm:mt-14 md:grid-cols-2">
+          {main.map((service) => (
+            <article key={service.title} className="flex flex-col rounded-lg bg-steel px-5 py-7 sm:p-9">
+              <h3 className="text-[1.75rem] leading-tight sm:text-[2.25rem]">{service.title}</h3>
+              <p className="mt-2 text-slate">{service.description}</p>
+              <ul className="mt-6 list-[square] space-y-2 pl-5 marker:text-brand">
+                {service.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <a href={service.href} className="text-link mt-auto self-start pt-7">
+                {service.linkLabel}
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          {more.map((service) => (
+            <article key={service.title} className="border-t-2 border-ink pt-4">
+              <h3 className="heading-sub">{service.title}</h3>
+              <p className="mt-1.5 text-slate">{service.description}</p>
+              <ul className="mt-4 list-[square] space-y-1.5 pl-5 text-[1rem] marker:text-brand">
+                {service.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
       </div>

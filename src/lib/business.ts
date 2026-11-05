@@ -19,11 +19,19 @@ export const business = {
   longitude: 8.3093,
 };
 
-export const openingHours = [
-  { day: "Montag", time: "Geschlossen" },
-  { day: "Dienstag - Freitag", time: "08:00 - 12:00, 13:00 - 17:00" },
-  { day: "Samstag", time: "08:00 - 14:00" },
-  { day: "Sonntag", time: "Geschlossen" },
+// Weekdays use JavaScript numbering (0 = Sunday). An empty periods list means closed.
+export type OpeningHoursGroup = {
+  label: string;
+  short: string;
+  days: number[];
+  periods: [open: string, close: string][];
+};
+
+export const openingHours: OpeningHoursGroup[] = [
+  { label: "Montag", short: "Mo", days: [1], periods: [] },
+  { label: "Dienstag – Freitag", short: "Di – Fr", days: [2, 3, 4, 5], periods: [["08:00", "12:00"], ["13:00", "17:00"]] },
+  { label: "Samstag", short: "Sa", days: [6], periods: [["08:00", "14:00"]] },
+  { label: "Sonntag", short: "So", days: [0], periods: [] },
 ];
 
 // Places around the shop that customers come from (used for areaServed and copy).
